@@ -17,4 +17,4 @@ Nuestro objetivo es facilitar el tramite y lograr que todas las personas que se 
 
 **UBICACION**
 
-https://maps.app.goo.gl/d3yctPczSaNGC74C9
+https://maps.app.goo.gl/hvHYtoKr9TWEG67N6
