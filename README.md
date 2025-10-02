@@ -13,3 +13,8 @@ Esto se haria de manera sencilla. Primero habria que sacar una cita para poder s
 **Objetivo del proyecto**
 
 Nuestro objetivo es facilitar el tramite y lograr que todas las personas que se acerquen a nosotros puedan conseguir su visa, tanto de turista, como de trabajo. Ya sea para ir de vacaciones, en busca de trabajo, etc. Nos intereso este proyecto por todos los problemas que hay en el mundo con respecto a los migrantes e inmigrantes. Y por lo mismo mucha gente tiene problemas para hacer este tipo de tramites.
+
+
+**UBICACION**
+
+https://maps.app.goo.gl/d3yctPczSaNGC74C9
