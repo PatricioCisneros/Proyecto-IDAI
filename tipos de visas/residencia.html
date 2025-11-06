@@ -170,6 +170,26 @@
       font-size: 14px;
       letter-spacing: 0.5px;
     }
+
+    /* Animación del mensaje final */
+    .mensaje-final {
+      text-align: center;
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 40px;
+      animation: aparecer 2s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .emoji {
+      font-size: 24px;
+    }
   </style>
 </head>
 <body>
@@ -216,7 +236,7 @@
     <h2>Formulario de Contacto</h2>
     <p>Completa tus datos para recibir asesoría sobre tu proceso de residencia:</p>
 
-    <form id="formResidencia">
+    <form>
       <label for="nombre">Nombre completo:</label>
       <input type="text" id="nombre" placeholder="Ej. Carlos Ramírez">
 
@@ -236,8 +256,13 @@
         <option>Otro</option>
       </select>
 
-      <button type="submit">Enviar solicitud</button>
+      <button type="button">Enviar solicitud</button>
     </form>
+
+    <div class="mensaje-final">
+      <p><span class="emoji">🌍</span> Gracias por confiar en <strong>Tramita tu Visa</strong>.  
+      ¡Estamos listos para acompañarte en este nuevo capítulo de tu vida! <span class="emoji">💫</span></p>
+    </div>
 
     <div class="volver">
       <a href="../index2.html">← Volver al Catálogo</a>
@@ -247,29 +272,6 @@
   <footer>
     © 2025 Tramita tu Visa | Todos los derechos reservados
   </footer>
-
-  <script>
-    document.getElementById("formResidencia").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nombre = document.getElementById("nombre").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const pais = document.getElementById("pais").value.trim();
-      const motivo = document.getElementById("motivo").value;
-
-      if (!nombre || !email || !pais || !motivo) {
-        alert("Por favor, completa todos los campos antes de enviar.");
-        return;
-      }
-
-      if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
-        alert("Por favor, ingresa un correo electrónico válido.");
-        return;
-      }
-
-      alert("¡Solicitud enviada correctamente! Pronto nos pondremos en contacto contigo.");
-      document.getElementById("formResidencia").reset();
-    });
-  </script>
 
 </body>
 </html>
