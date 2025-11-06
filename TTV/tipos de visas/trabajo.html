@@ -102,44 +102,6 @@
       content: "💼 ";
     }
 
-    form {
-      margin-top: 30px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    form input, form select {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    form button {
-      background-color: #fff;
-      color: #1565c0;
-      padding: 12px 25px;
-      border-radius: 10px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    form button:hover {
-      background-color: #bbdefb;
-      transform: scale(1.05);
-    }
-
     .volver {
       display: flex;
       justify-content: center;
@@ -216,33 +178,6 @@
       </ul>
     </div>
 
-    <h2>Formulario de Contacto</h2>
-    <p>Completa tus datos para recibir asesoría personalizada sobre la visa laboral:</p>
-
-    <form id="formVisaTrabajo">
-      <label for="nombre">Nombre completo:</label>
-      <input type="text" id="nombre" placeholder="Ej. Carlos Ramírez">
-
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" placeholder="Ej. carlos@email.com">
-
-      <label for="pais">País donde deseas trabajar:</label>
-      <input type="text" id="pais" placeholder="Ej. Alemania">
-
-      <label for="sector">Sector laboral:</label>
-      <select id="sector">
-        <option value="">Selecciona una opción</option>
-        <option>Tecnología</option>
-        <option>Salud</option>
-        <option>Construcción</option>
-        <option>Educación</option>
-        <option>Hostelería</option>
-        <option>Otro</option>
-      </select>
-
-      <button type="submit">Enviar solicitud</button>
-    </form>
-
     <div class="volver">
       <a href="../index2.html">← Volver al Catálogo</a>
     </div>
@@ -251,30 +186,6 @@
   <footer>
     © 2025 Tramita tu Visa | Todos los derechos reservados
   </footer>
-
-  <script>
-    // Validación simple del formulario
-    document.getElementById("formVisaTrabajo").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nombre = document.getElementById("nombre").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const pais = document.getElementById("pais").value.trim();
-      const sector = document.getElementById("sector").value;
-
-      if (!nombre || !email || !pais || !sector) {
-        alert("Por favor, completa todos los campos antes de enviar.");
-        return;
-      }
-
-      if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
-        alert("Por favor, ingresa un correo electrónico válido.");
-        return;
-      }
-
-      alert("¡Solicitud enviada correctamente! Pronto nos pondremos en contacto contigo.");
-      document.getElementById("formVisaTrabajo").reset();
-    });
-  </script>
 
 </body>
 </html>
