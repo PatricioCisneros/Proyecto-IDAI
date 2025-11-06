@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visa de Estudiante | Tramita tu Visa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
+      color: white;
+      line-height: 1.6;
+      cursor: url("https://cdn-icons-png.flaticon.com/512/684/684908.png") 16 16, auto;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #e0f7fa;
+      margin-top: 10px;
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .imagen-principal {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #fff;
+      border-left: 5px solid #fff;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #f5f5f5;
+      text-align: justify;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 40px 0;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    .requisitos {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      margin-top: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+      font-size: 16px;
+    }
+
+    ul li::before {
+      content: "🎓 ";
+    }
+
+    form {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    form button {
+      background-color: #fff;
+      color: #1565c0;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #bbdefb;
+      transform: scale(1.05);
+    }
+
+    .volver {
+      display: flex;
+      justify-content: center;
+      margin: 50px 0;
+    }
+
+    .volver a {
+      background-color: #fff;
+      color: #1565c0;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .volver a:hover {
+      background-color: #bbdefb;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #e0f7fa;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Visa de Estudiante</h1>
+    <p>Tu futuro académico comienza aquí — Te ayudamos a tramitar tu visa</p>
+  </header>
+
+  <div class="contenedor">
+    <img src="../img_estudiantes.jpg" alt="Visa de estudiante" class="imagen-principal">
+
+    <h2>¿Qué es una Visa de Estudiante?</h2>
+    <p>
+      La <strong>Visa de Estudiante</strong> te permite vivir en otro país con el propósito de realizar estudios 
+      en una institución educativa reconocida. Es ideal para quienes desean ampliar sus conocimientos, 
+      aprender un nuevo idioma o cursar una carrera universitaria en el extranjero.
+    </p>
+
+    <h2>Beneficios</h2>
+    <p>
+      Obtener esta visa te da la oportunidad de estudiar en el extranjero, 
+      acceder a programas académicos de calidad y vivir una experiencia internacional enriquecedora. 
+      Algunos países también permiten trabajar medio tiempo mientras estudias.
+    </p>
+
+    <div class="galeria">
+      <img src="../img_estudio1.jpg" alt="Campus universitario">
+      <img src="../img_estudio2.jpg" alt="Biblioteca moderna">
+      <img src="../img_estudio3.jpg" alt="Clases internacionales">
+      <img src="../img_estudio4.jpg" alt="Estudiantes felices">
+    </div>
+
+    <div class="requisitos">
+      <h2>Requisitos Generales</h2>
+      <ul>
+        <li>Pasaporte vigente con al menos 6 meses de validez.</li>
+        <li>Carta de aceptación de una institución educativa.</li>
+        <li>Comprobante de pago de matrícula o inscripción.</li>
+        <li>Prueba de fondos suficientes para manutención y estudios.</li>
+        <li>Seguro médico internacional válido.</li>
+        <li>Fotografía tipo pasaporte.</li>
+        <li>Formulario de solicitud de visa completado.</li>
+      </ul>
+    </div>
+
+    <h2>Formulario de Contacto</h2>
+    <p>Completa tus datos para recibir asesoría personalizada:</p>
+
+    <form id="formVisa">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" placeholder="Ej. Ana Pérez">
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" placeholder="Ej. ana@email.com">
+
+      <label for="pais">País destino de estudios:</label>
+      <input type="text" id="pais" placeholder="Ej. Canadá">
+
+      <label for="nivel">Nivel de estudios:</label>
+      <select id="nivel">
+        <option value="">Selecciona una opción</option>
+        <option>Idioma</option>
+        <option>Universidad</option>
+        <option>Maestría</option>
+        <option>Doctorado</option>
+      </select>
+
+      <button type="submit">Enviar solicitud</button>
+    </form>
+
+    <div class="volver">
+      <a href="../index2.html">← Volver al Catálogo</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Tramita tu Visa | Todos los derechos reservados
+  </footer>
+
+  <script>
+    // Validación simple del formulario
+    document.getElementById("formVisa").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const pais = document.getElementById("pais").value.trim();
+      const nivel = document.getElementById("nivel").value;
+
+      if (!nombre || !email || !pais || !nivel) {
+        alert("Por favor, completa todos los campos antes de enviar.");
+        return;
+      }
+
+      if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+        alert("Por favor, ingresa un correo electrónico válido.");
+        return;
+      }
+
+      alert("¡Solicitud enviada correctamente! Pronto nos pondremos en contacto contigo.");
+      document.getElementById("formVisa").reset();
+    });
+  </script>
+
+</body>
+</html>
