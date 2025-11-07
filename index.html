@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tramita tu Visa</title>
+
+  <style>
+    
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #4f8fe4, #5a58e2, #6dd5fa);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: url("TTV/avion.png"), auto;
+    }
+
+    h1, h2, h3, p, em {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    
+    header {
+      background: linear-gradient(90deg, #3949ab, #5c6bc0, #7986cb);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 50px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    header p {
+      font-size: 20px;
+      color: #e3f2fd;
+    }
+
+   
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 40px auto;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .hero img {
+      border-radius: 20px;
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      margin: 10px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin: 0 20px;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      animation: floatText 3s ease-in-out infinite;
+    }
+
+    
+    section {
+      max-width: 950px;
+      margin: 20px auto 60px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1.2s ease;
+    }
+
+    section em {
+      display: block;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      font-size: 18px;
+      color: #f9f9f9;
+      margin: 25px 0;
+      text-align: justify;
+    }
+
+    section strong {
+      color: #ffee58;
+    }
+
+    
+    .img-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 45px;
+      margin-top: 40px;
+    }
+
+    .img-gallery img {
+      border-radius: 15px;
+      width: 340px;
+      height: 240px;
+      object-fit: cover;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .img-gallery img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+   
+    .link {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .link a {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffeb3b, #fdd835);
+      color: #283593;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      cursor: url("TTV/avion.png"), pointer;
+    }
+
+    .link a:hover {
+      background: linear-gradient(90deg, #fff176, #ffee58);
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.25);
+      color: #dce9ff;
+      font-size: 14px;
+      box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+   
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Tramita tu Visa</h1>
+    <p>Fácil, rápido y seguro</p>
+  </header>
+
+  <div class="hero">
+    <img src="../imgs/ttv 1.jpg" alt="Imagen visa 1">
+    <h2>¡Tramítala ya!</h2>
+    <img src="../imgs/ttv 2.jpg" alt="Imagen visa 2">
+  </div>
+
+  <section>
+    <em>Pasos para tramitar tu visa:</em>
+    <p>
+      Con nosotros es fácil y seguro hacer trámites para sacar o renovar tu visa. 
+      Contáctanos para agendar tu cita y te diremos los documentos necesarios que tienes que traer para empezar tu trámite.
+    </p>
+
+    <p>
+      El proceso se maneja de forma sencilla y eficiente:
+      <br><br>
+      <strong>1. Primera cita de diagnóstico:</strong> Evaluamos la situación actual de la persona interesada para orientarla de manera adecuada y asegurarnos de que cumpla con todos los requisitos y documentación necesaria.
+      <br><br>
+      <strong>2. Asesoría personalizada:</strong> Brindamos información detallada sobre los costos, tiempos y requisitos específicos, dependiendo del tipo de visa solicitada (turismo o trabajo).
+      <br><br>
+      <strong>3. Agendamiento de cita consular:</strong> Si el cliente está decidido, procedemos a gestionar su cita en el consulado, con la posibilidad de acortar los tiempos de espera (con un costo adicional).
+      <br><br>
+      <strong>4. Simulación previa a la cita:</strong> Antes de la entrevista oficial, realizamos un simulacro presencial para preparar al solicitante, con preguntas similares a las que podría enfrentar en el consulado.
+    </p>
+
+    <div class="img-gallery">
+      <img src="../imgs/ttv 3.jpg" alt="Visa paso 1">
+      <img src="../imgs/ttv 4.jpg" alt="Visa paso 2">
+    </div>
+
+    <div class="link">
+      <a href="index2.html">Ir al catálogo de TTV</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Tramita tu Visa | Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
