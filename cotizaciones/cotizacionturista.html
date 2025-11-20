@@ -144,32 +144,32 @@
 
       <div>
         <label>Nombre completo</label>
-        <input type="text" required>
+        <input type="text" id="nombre" required>
       </div>
 
       <div>
         <label>Correo electrónico</label>
-        <input type="email" required>
+        <input type="email" id="correo" required>
       </div>
 
       <div>
         <label>Teléfono / WhatsApp</label>
-        <input type="text" required>
+        <input type="text" id="telefono" required>
       </div>
 
       <div>
         <label>País al que deseas viajar</label>
-        <input type="text" placeholder="Ejemplo: Estados Unidos" required>
+        <input type="text" id="pais" placeholder="Ejemplo: Estados Unidos" required>
       </div>
 
       <div>
         <label>Fecha aproximada de viaje</label>
-        <input type="date" required>
+        <input type="date" id="fechaViaje" required>
       </div>
 
       <div>
         <label>¿Has solicitado una visa antes?</label>
-        <select required>
+        <select id="visaAnterior" required>
           <option value="">Selecciona una opción</option>
           <option>Sí</option>
           <option>No</option>
@@ -178,7 +178,7 @@
 
       <div style="grid-column: span 2;">
         <label>Comentarios (opcional)</label>
-        <textarea placeholder="¿Tienes alguna duda o solicitud especial?"></textarea>
+        <textarea id="comentarios" placeholder="¿Tienes alguna duda o solicitud especial?"></textarea>
       </div>
 
       <button class="btn-enviar" type="submit">Enviar Cotización</button>
@@ -189,7 +189,50 @@
       <a href="../index2.html">Volver al Catálogo</a>
     </div>
 
+    <!-- Contenedor para mostrar la cotización -->
+    <div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
+
   </div>
+
+  <script>
+    const formulario = document.querySelector("form");
+    const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
+
+    formulario.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+
+      // Obtener valores de los campos con ID
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const telefono = document.getElementById("telefono").value;
+      const pais = document.getElementById("pais").value;
+      const fechaViaje = document.getElementById("fechaViaje").value;
+      const visaAnterior = document.getElementById("visaAnterior").value;
+      const comentarios = document.getElementById("comentarios").value;
+
+      // Crear mensaje con toda la información
+      let mensaje = `
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo:</strong> ${correo}</p>
+        <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
+        <p><strong>País al que desea viajar:</strong> ${pais}</p>
+        <p><strong>Fecha aproximada de viaje:</strong> ${fechaViaje}</p>
+        <p><strong>Ha solicitado visa antes:</strong> ${visaAnterior}</p>
+      `;
+
+      if (comentarios.trim() !== "") {
+        mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
+      }
+
+      // Mostrar el mensaje debajo del formulario
+      mensajeCotizacion.innerHTML = mensaje;
+
+      // Limpiar el formulario
+      formulario.reset();
+    });
+  </script>
 
 </body>
 </html>
