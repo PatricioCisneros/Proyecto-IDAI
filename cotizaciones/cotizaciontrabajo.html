@@ -124,6 +124,14 @@
       transform: scale(1.05);
       background: #bbdefb;
     }
+
+    #mensaje-cotizacion {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -144,32 +152,32 @@
 
       <div>
         <label>Nombre completo</label>
-        <input type="text" required>
+        <input type="text" id="nombre" required>
       </div>
 
       <div>
         <label>Correo electrónico</label>
-        <input type="email" required>
+        <input type="email" id="correo" required>
       </div>
 
       <div>
         <label>Teléfono / WhatsApp</label>
-        <input type="text" required>
+        <input type="text" id="telefono" required>
       </div>
 
       <div>
         <label>País donde trabajarás</label>
-        <input type="text" placeholder="Ejemplo: Estados Unidos, Canadá, Europa" required>
+        <input type="text" id="pais" placeholder="Ejemplo: Estados Unidos, Canadá, Europa" required>
       </div>
 
       <div>
         <label>Nombre de la empresa contratante</label>
-        <input type="text" placeholder="Ejemplo: Amazon, Tesla, Hospital ABC">
+        <input type="text" id="empresa" placeholder="Ejemplo: Amazon, Tesla, Hospital ABC">
       </div>
 
       <div>
         <label>¿Cuentas con una oferta laboral?</label>
-        <select required>
+        <select id="oferta" required>
           <option value="">Selecciona una opción</option>
           <option>Sí</option>
           <option>No</option>
@@ -178,12 +186,12 @@
 
       <div>
         <label>Fecha estimada para iniciar el empleo</label>
-        <input type="date" required>
+        <input type="date" id="fechaInicio" required>
       </div>
 
       <div>
         <label>Tipo de trabajo</label>
-        <select required>
+        <select id="tipoTrabajo" required>
           <option value="">Selecciona</option>
           <option>Profesional</option>
           <option>Técnico</option>
@@ -195,7 +203,7 @@
 
       <div style="grid-column: span 2;">
         <label>Comentarios (opcional)</label>
-        <textarea placeholder="Comparte detalles adicionales que puedan ayudar con tu cotización."></textarea>
+        <textarea id="comentarios" placeholder="Comparte detalles adicionales que puedan ayudar con tu cotización."></textarea>
       </div>
 
       <button class="btn-enviar" type="submit">Enviar Cotización</button>
@@ -206,7 +214,49 @@
       <a href="../index2.html">Volver al Catálogo</a>
     </div>
 
+    <div id="mensaje-cotizacion"></div>
+
   </div>
+
+  <script>
+    const formulario = document.querySelector("form");
+    const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
+
+    formulario.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const telefono = document.getElementById("telefono").value;
+      const pais = document.getElementById("pais").value;
+      const empresa = document.getElementById("empresa").value;
+      const oferta = document.getElementById("oferta").value;
+      const fechaInicio = document.getElementById("fechaInicio").value;
+      const tipoTrabajo = document.getElementById("tipoTrabajo").value;
+      const comentarios = document.getElementById("comentarios").value;
+
+      let mensaje = `
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo:</strong> ${correo}</p>
+        <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
+        <p><strong>País donde trabajará:</strong> ${pais}</p>
+        <p><strong>Empresa contratante:</strong> ${empresa}</p>
+        <p><strong>Cuenta con oferta laboral:</strong> ${oferta}</p>
+        <p><strong>Fecha estimada de inicio:</strong> ${fechaInicio}</p>
+        <p><strong>Tipo de trabajo:</strong> ${tipoTrabajo}</p>
+      `;
+
+      if (comentarios.trim() !== "") {
+        mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
+      }
+
+      mensajeCotizacion.innerHTML = mensaje;
+
+      formulario.reset();
+    });
+  </script>
 
 </body>
 </html>
