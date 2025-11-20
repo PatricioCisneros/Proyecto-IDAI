@@ -143,90 +143,115 @@
 
     <form>
 
-      <div>
-        <label>Nombre completo</label>
-        <input type="text" required>
-      </div>
-
-      <div>
-        <label>Correo electrónico</label>
-        <input type="email" required>
-      </div>
-
-      <div>
-        <label>Teléfono / WhatsApp</label>
-        <input type="text" required>
-      </div>
-
-      <div>
-        <label>País donde deseas obtener la residencia</label>
-        <input type="text" placeholder="Ejemplo: Canadá, España, Estados Unidos" required>
-      </div>
-
-      <div>
-        <label>Tipo de residencia solicitada</label>
-        <select required>
-          <option value="">Selecciona una opción</option>
-          <option>Residencia Temporal</option>
-          <option>Residencia Permanente</option>
-          <option>Residencia por Trabajo</option>
-          <option>Residencia por Estudio</option>
-          <option>Residencia por Inversión</option>
-          <option>Residencia Familiar</option>
-        </select>
-      </div>
-
-      <div>
-        <label>¿Viajas con familia?</label>
-        <select required>
-          <option value="">Selecciona</option>
-          <option>Sí</option>
-          <option>No</option>
-        </select>
-      </div>
-
-      <div>
-        <label>Fecha estimada para mudarte</label>
-        <input type="date" required>
-      </div>
-
-      <div>
-        <label>¿Has solicitado una visa antes?</label>
-        <select required>
-          <option value="">Selecciona</option>
-          <option>Sí</option>
-          <option>No</option>
-        </select>
-      </div>
-
-      <div style="grid-column: span 2;">
-        <label>Comentarios adicionales (opcional)</label>
-        <textarea placeholder="Incluye detalles importantes para tu caso."></textarea>
-      </div>
-
-      <button class="btn-enviar" type="submit">Enviar Cotización</button>
-
-    </form>
-
-    <div class="volver">
-      <a href="../index2.html">Volver al Catálogo</a>
-    </div>
-
+  <div>
+    <label>Nombre completo</label>
+    <input type="text" id="nombre" required>
   </div>
 
-  
-  <script>
-    const formulario = document.querySelector("form");
+  <div>
+    <label>Correo electrónico</label>
+    <input type="email" id="correo" required>
+  </div>
 
-    formulario.addEventListener("submit", function(e) {
-      e.preventDefault();
+  <div>
+    <label>Teléfono / WhatsApp</label>
+    <input type="text" id="telefono" required>
+  </div>
 
-      alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+  <div>
+    <label>País donde deseas obtener la residencia</label>
+    <input type="text" id="pais" placeholder="Ejemplo: Canadá, España, Estados Unidos" required>
+  </div>
 
-      formulario.reset();
-    });
-  </script>
+  <div>
+    <label>Tipo de residencia solicitada</label>
+    <select id="tipoResidencia" required>
+      <option value="">Selecciona una opción</option>
+      <option>Residencia Temporal</option>
+      <option>Residencia Permanente</option>
+      <option>Residencia por Trabajo</option>
+      <option>Residencia por Estudio</option>
+      <option>Residencia por Inversión</option>
+      <option>Residencia Familiar</option>
+    </select>
+  </div>
+
+  <div>
+    <label>¿Viajas con familia?</label>
+    <select id="viajaFamilia" required>
+      <option value="">Selecciona</option>
+      <option>Sí</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Fecha estimada para mudarte</label>
+    <input type="date" id="fechaMudanza" required>
+  </div>
+
+  <div>
+    <label>¿Has solicitado una visa antes?</label>
+    <select id="visaAnterior" required>
+      <option value="">Selecciona</option>
+      <option>Sí</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div style="grid-column: span 2;">
+    <label>Comentarios adicionales (opcional)</label>
+    <textarea id="comentarios" placeholder="Incluye detalles importantes para tu caso."></textarea>
+  </div>
+
+  <button class="btn-enviar" type="submit">Enviar Cotización</button>
+
+</form>
+
+<div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
+
+<script>
+const formulario = document.querySelector("form");
+const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
+
+formulario.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+
+  // Obtener valores con los IDs
+  const nombre = document.getElementById("nombre").value;
+  const correo = document.getElementById("correo").value;
+  const telefono = document.getElementById("telefono").value;
+  const pais = document.getElementById("pais").value;
+  const tipoResidencia = document.getElementById("tipoResidencia").value;
+  const viajaFamilia = document.getElementById("viajaFamilia").value;
+  const fechaMudanza = document.getElementById("fechaMudanza").value;
+  const visaAnterior = document.getElementById("visaAnterior").value;
+  const comentarios = document.getElementById("comentarios").value;
+
+  // Crear mensaje con toda la información
+  let mensaje = `
+    <p><strong>Nombre:</strong> ${nombre}</p>
+    <p><strong>Correo:</strong> ${correo}</p>
+    <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
+    <p><strong>País destino:</strong> ${pais}</p>
+    <p><strong>Tipo de residencia:</strong> ${tipoResidencia}</p>
+    <p><strong>Viaja con familia:</strong> ${viajaFamilia}</p>
+    <p><strong>Fecha estimada para mudarse:</strong> ${fechaMudanza}</p>
+    <p><strong>Ha solicitado visa antes:</strong> ${visaAnterior}</p>
+  `;
+
+  if (comentarios.trim() !== "") {
+    mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
+  }
+
+  // Mostrar el mensaje debajo del formulario
+  mensajeCotizacion.innerHTML = mensaje;
+
+  formulario.reset();
+});
+</script>
 
 </body>
 </html>
-
