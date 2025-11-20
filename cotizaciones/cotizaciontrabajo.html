@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotización – Visa de Trabajo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.15);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+
+    .banner-img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 17px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 5px;
+      font-size: 15px;
+      outline: none;
+      background: rgba(255,255,255,0.8);
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .btn-enviar {
+      grid-column: span 2;
+      padding: 14px;
+      background: linear-gradient(135deg, #ff80ff, #b43cff);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: none;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.45);
+    }
+
+    .btn-enviar:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #ffb3ff, #ce6bff);
+    }
+
+    .volver {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .volver a {
+      background-color: #fff;
+      color: #1565c0;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    }
+
+    .volver a:hover {
+      transform: scale(1.05);
+      background: #bbdefb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Cotización – Visa de Trabajo</h1>
+  </header>
+
+  <div class="contenedor">
+
+    <img src="../imgs/ttv 7.jpg" class="banner-img" alt="Visa de Trabajo">
+
+    <h2>Solicita tu cotización personalizada</h2>
+    <p>Completa el formulario y nuestros asesores te enviarán el costo exacto del trámite y los requisitos de tu visa de trabajo.</p>
+
+    <form>
+
+      <div>
+        <label>Nombre completo</label>
+        <input type="text" required>
+      </div>
+
+      <div>
+        <label>Correo electrónico</label>
+        <input type="email" required>
+      </div>
+
+      <div>
+        <label>Teléfono / WhatsApp</label>
+        <input type="text" required>
+      </div>
+
+      <div>
+        <label>País donde trabajarás</label>
+        <input type="text" placeholder="Ejemplo: Estados Unidos, Canadá, Europa" required>
+      </div>
+
+      <div>
+        <label>Nombre de la empresa contratante</label>
+        <input type="text" placeholder="Ejemplo: Amazon, Tesla, Hospital ABC">
+      </div>
+
+      <div>
+        <label>¿Cuentas con una oferta laboral?</label>
+        <select required>
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Fecha estimada para iniciar el empleo</label>
+        <input type="date" required>
+      </div>
+
+      <div>
+        <label>Tipo de trabajo</label>
+        <select required>
+          <option value="">Selecciona</option>
+          <option>Profesional</option>
+          <option>Técnico</option>
+          <option>Temporal</option>
+          <option>Especializado</option>
+          <option>Independiente</option>
+        </select>
+      </div>
+
+      <div style="grid-column: span 2;">
+        <label>Comentarios (opcional)</label>
+        <textarea placeholder="Comparte detalles adicionales que puedan ayudar con tu cotización."></textarea>
+      </div>
+
+      <button class="btn-enviar" type="submit">Enviar Cotización</button>
+
+    </form>
+
+    <div class="volver">
+      <a href="../index2.html">Volver al Catálogo</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
