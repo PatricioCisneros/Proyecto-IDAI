@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cotización – Visa de Residencia</title>
+  <title>Cotización - Visa de Residencia</title>
 
   <style>
     body {
@@ -125,20 +125,21 @@
       background: #bbdefb;
     }
   </style>
+
 </head>
 
 <body>
 
   <header>
-    <h1>Cotización – Visa de Residencia</h1>
+    <h1>Cotización - Visa de Residencia</h1>
   </header>
 
   <div class="contenedor">
 
     <img src="../imgs/ttv 1.jpg" class="banner-img" alt="Visa de Residencia">
 
-    <h2>Solicita tu cotización personalizada</h2>
-    <p>Completa el siguiente formulario y te daremos el costo detallado para tramitar tu visa de residencia de manera segura y rápida.</p>
+    <h2>Solicita una cotización personalizada</h2>
+    <p>Llena el siguiente formulario y nuestro equipo te enviará el costo del trámite de residencia según tu caso y país destino.</p>
 
     <form>
 
@@ -158,24 +159,25 @@
       </div>
 
       <div>
-        <label>País donde deseas residir</label>
-        <input type="text" placeholder="Ejemplo: Estados Unidos, España, Canadá" required>
+        <label>País donde deseas obtener la residencia</label>
+        <input type="text" placeholder="Ejemplo: Canadá, España, Estados Unidos" required>
       </div>
 
       <div>
-        <label>Motivo de residencia</label>
+        <label>Tipo de residencia solicitada</label>
         <select required>
           <option value="">Selecciona una opción</option>
-          <option>Trabajo</option>
-          <option>Estudios</option>
-          <option>Reagrupación familiar</option>
-          <option>Inversión</option>
-          <option>Residencia permanente</option>
+          <option>Residencia Temporal</option>
+          <option>Residencia Permanente</option>
+          <option>Residencia por Trabajo</option>
+          <option>Residencia por Estudio</option>
+          <option>Residencia por Inversión</option>
+          <option>Residencia Familiar</option>
         </select>
       </div>
 
       <div>
-        <label>¿Ya has solicitado una visa antes?</label>
+        <label>¿Viajas con familia?</label>
         <select required>
           <option value="">Selecciona</option>
           <option>Sí</option>
@@ -189,7 +191,7 @@
       </div>
 
       <div>
-        <label>¿Viajas con familia?</label>
+        <label>¿Has solicitado una visa antes?</label>
         <select required>
           <option value="">Selecciona</option>
           <option>Sí</option>
@@ -198,8 +200,8 @@
       </div>
 
       <div style="grid-column: span 2;">
-        <label>Comentarios adicionales</label>
-        <textarea placeholder="Cuéntanos más sobre tu situación o requisitos especiales."></textarea>
+        <label>Comentarios adicionales (opcional)</label>
+        <textarea placeholder="Incluye detalles importantes para tu caso."></textarea>
       </div>
 
       <button class="btn-enviar" type="submit">Enviar Cotización</button>
@@ -212,5 +214,19 @@
 
   </div>
 
+  
+  <script>
+    const formulario = document.querySelector("form");
+
+    formulario.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+
+      formulario.reset();
+    });
+  </script>
+
 </body>
 </html>
+
