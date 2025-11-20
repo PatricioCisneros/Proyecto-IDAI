@@ -189,7 +189,6 @@
       <a href="../index2.html">Volver al Catálogo</a>
     </div>
 
-    <!-- Contenedor para mostrar la cotización -->
     <div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
 
   </div>
@@ -203,7 +202,6 @@
 
       alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
 
-      // Obtener valores de los campos con ID
       const nombre = document.getElementById("nombre").value;
       const correo = document.getElementById("correo").value;
       const telefono = document.getElementById("telefono").value;
@@ -212,7 +210,6 @@
       const visaAnterior = document.getElementById("visaAnterior").value;
       const comentarios = document.getElementById("comentarios").value;
 
-      // Crear mensaje con toda la información
       let mensaje = `
         <p><strong>Nombre:</strong> ${nombre}</p>
         <p><strong>Correo:</strong> ${correo}</p>
@@ -226,10 +223,10 @@
         mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
       }
 
-      // Mostrar el mensaje debajo del formulario
+    
       mensajeCotizacion.innerHTML = mensaje;
 
-      // Limpiar el formulario
+      
       formulario.reset();
     });
   </script>

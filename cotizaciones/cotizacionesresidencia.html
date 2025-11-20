@@ -219,7 +219,7 @@ formulario.addEventListener("submit", function(e) {
 
   alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
 
-  // Obtener valores con los IDs
+
   const nombre = document.getElementById("nombre").value;
   const correo = document.getElementById("correo").value;
   const telefono = document.getElementById("telefono").value;
@@ -230,7 +230,7 @@ formulario.addEventListener("submit", function(e) {
   const visaAnterior = document.getElementById("visaAnterior").value;
   const comentarios = document.getElementById("comentarios").value;
 
-  // Crear mensaje con toda la información
+  
   let mensaje = `
     <p><strong>Nombre:</strong> ${nombre}</p>
     <p><strong>Correo:</strong> ${correo}</p>
@@ -246,7 +246,7 @@ formulario.addEventListener("submit", function(e) {
     mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
   }
 
-  // Mostrar el mensaje debajo del formulario
+  
   mensajeCotizacion.innerHTML = mensaje;
 
   formulario.reset();
