@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tramita tu Visa</title>
 
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
@@ -17,15 +19,70 @@
       cursor: url("TTV/avion.png"), auto;
     }
 
-    h1, h2, h3, p, em {
-      margin: 0;
-    }
+    h1, h2, h3, p, em { margin: 0; }
 
-    a {
-      text-decoration: none;
-    }
+    a { text-decoration: none; }
 
     
+    .topbar {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.20), rgba(255,255,255,0.15), rgba(255,255,255,0.20));
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.topbar .phones {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.topbar .phones span {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+
+.social-icons a {
+  color: #ffffff;
+  margin-left: 12px;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.28);
+  transition: 0.3s ease;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.social-icons a:hover {
+  transform: scale(1.18) translateY(-2px);
+  background: rgba(255,255,255,0.30);
+  box-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+    
+
     header {
       background: linear-gradient(90deg, #3949ab, #5c6bc0, #7986cb);
       padding: 40px 20px;
@@ -45,7 +102,6 @@
       color: #e3f2fd;
     }
 
-   
     .hero {
       display: flex;
       justify-content: center;
@@ -82,7 +138,6 @@
       animation: floatText 3s ease-in-out infinite;
     }
 
-    
     section {
       max-width: 950px;
       margin: 20px auto 60px;
@@ -99,23 +154,10 @@
       display: block;
       text-align: center;
       font-size: 22px;
-      font-weight: bold;
-      color: #fff;
       margin-bottom: 15px;
+      font-weight: bold;
     }
 
-    section p {
-      font-size: 18px;
-      color: #f9f9f9;
-      margin: 25px 0;
-      text-align: justify;
-    }
-
-    section strong {
-      color: #ffee58;
-    }
-
-    
     .img-gallery {
       display: flex;
       justify-content: center;
@@ -125,45 +167,45 @@
     }
 
     .img-gallery img {
-      border-radius: 15px;
-      width: 340px;
-      height: 240px;
-      object-fit: cover;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
+  border-radius: 15px;
+  width: 260px;        
+  height: 180px;       
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-    .img-gallery img:hover {
-      transform: scale(1.07);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    }
+.img-gallery img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
 
-   
-    .link {
-      text-align: center;
-      margin-top: 40px;
-    }
+.link {
+  text-align: center;
+  margin-top: 45px;
+}
 
-    .link a {
-      display: inline-block;
-      background: linear-gradient(90deg, #ffeb3b, #fdd835);
-      color: #283593;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: bold;
-      font-size: 18px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-      transition: all 0.3s ease;
-      cursor: url("TTV/avion.png"), pointer;
-    }
+.link a {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffeb3b, #fdd835);
+  color: #283593;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 19px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: url("TTV/avion.png"), pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
-    .link a:hover {
-      background: linear-gradient(90deg, #fff176, #ffee58);
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
+.link a:hover {
+  transform: scale(1.1) translateY(-2px);
+  background: linear-gradient(90deg, #fff176, #ffee58);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
 
-    
     footer {
       text-align: center;
       padding: 20px;
@@ -173,26 +215,29 @@
       box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.3);
     }
 
-   
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes floatText {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
   </style>
 </head>
 
 <body>
+
+  
+  <div class="topbar">
+    <div class="phones">
+      <i class="fa-solid fa-phone"></i> 818-180-056-8 &nbsp; | &nbsp;
+      <i class="fa-brands fa-whatsapp"></i> 812-900-635-6
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+  </div>
+  
 
   <header>
     <h1>Tramita tu Visa</h1>
@@ -207,21 +252,17 @@
 
   <section>
     <em>Pasos para tramitar tu visa:</em>
+
     <p>
       Con nosotros es fácil y seguro hacer trámites para sacar o renovar tu visa. 
-      Contáctanos para agendar tu cita y te diremos los documentos necesarios que tienes que traer para empezar tu trámite.
+      Contáctanos para agendar tu cita y te diremos los documentos necesarios que necesitas traer.
     </p>
 
     <p>
-      El proceso se maneja de forma sencilla y eficiente:
-      <br><br>
-      <strong>1. Primera cita de diagnóstico:</strong> Evaluamos la situación actual de la persona interesada para orientarla de manera adecuada y asegurarnos de que cumpla con todos los requisitos y documentación necesaria.
-      <br><br>
-      <strong>2. Asesoría personalizada:</strong> Brindamos información detallada sobre los costos, tiempos y requisitos específicos, dependiendo del tipo de visa solicitada (turismo o trabajo).
-      <br><br>
-      <strong>3. Agendamiento de cita consular:</strong> Si el cliente está decidido, procedemos a gestionar su cita en el consulado, con la posibilidad de acortar los tiempos de espera (con un costo adicional).
-      <br><br>
-      <strong>4. Simulación previa a la cita:</strong> Antes de la entrevista oficial, realizamos un simulacro presencial para preparar al solicitante, con preguntas similares a las que podría enfrentar en el consulado.
+      <strong>1. Primera cita de diagnóstico:</strong> Evaluamos tu situación actual y documentos.<br><br>
+      <strong>2. Asesoría personalizada:</strong> Te damos costos, requisitos y tiempos reales.<br><br>
+      <strong>3. Agendamiento de cita consular:</strong> Gestionamos tu cita e incluso aceleramos el proceso (opcional).<br><br>
+      <strong>4. Simulación previa:</strong> Te preparamos para la entrevista con preguntas reales.
     </p>
 
     <div class="img-gallery">
