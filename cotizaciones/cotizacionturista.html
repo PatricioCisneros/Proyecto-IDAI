@@ -22,81 +22,82 @@
     }
 
     header h1 {
-      font-size: 38px;
+      font-size: 40px;
       margin: 0;
-      letter-spacing: 1px;
     }
 
     .contenedor {
-      max-width: 900px;
+      max-width: 750px;
       margin: 40px auto;
       background: rgba(255,255,255,0.15);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      backdrop-filter: blur(12px);
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
     }
 
     .banner-img {
       width: 100%;
-      height: 270px;
+      height: 260px;
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 20px;
-      border: 2px solid rgba(255,255,255,0.3);
     }
 
     h2 {
       text-align: center;
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
     p {
-      font-size: 17px;
       text-align: center;
-      margin-bottom: 20px;
+      font-size: 18px;
+      margin-bottom: 25px;
     }
 
+    /* FORMULARIO 1 INPUT POR FILA */
     form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
     }
 
     label {
       font-weight: bold;
-      font-size: 15px;
+      font-size: 17px;
+      margin-bottom: 5px;
+      display: block;
     }
 
     input, select, textarea {
       width: 100%;
-      padding: 12px;
-      border-radius: 10px;
+      padding: 14px;
+      border-radius: 12px;
       border: none;
-      margin-top: 5px;
-      font-size: 15px;
+      font-size: 16px;
       outline: none;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
     }
 
     textarea {
       resize: none;
-      height: 120px;
+      height: 130px;
     }
 
     .btn-enviar {
-      grid-column: span 2;
-      padding: 14px;
+      padding: 15px;
       background: linear-gradient(135deg, #ff80ff, #b43cff);
       color: white;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: bold;
-      text-align: center;
       border-radius: 12px;
       cursor: pointer;
-      transition: 0.3s;
       border: none;
-      box-shadow: 0 5px 14px rgba(0,0,0,0.45);
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.45);
+      margin-top: 10px;
     }
 
     .btn-enviar:hover {
@@ -124,10 +125,40 @@
       transform: scale(1.05);
       background: #bbdefb;
     }
+
+    /* ALERTA MINIMALISTA A */
+    #alerta-exito {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.9);
+      color: #2e7d32;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      font-weight: bold;
+    }
+
+    #alerta-exito.visible {
+      opacity: 1;
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- ALERTA -->
+  <div id="alerta-exito">
+    <span style="font-size: 20px;">✔</span>
+    Cotización enviada correctamente
+  </div>
 
   <header>
     <h1>Cotización - Visa de Turista</h1>
@@ -135,13 +166,12 @@
 
   <div class="contenedor">
 
-    <img src="../imgs/ttv 5.jpg" class="banner-img" alt="Visa de Turista">
+    <img src="../imgs/ttv 5.jpg" class="banner-img">
 
     <h2>Solicita una cotización personalizada</h2>
-    <p>Completa el siguiente formulario y uno de nuestros asesores se comunicará contigo para brindarte el costo exacto del trámite.</p>
+    <p>Completa el formulario y un asesor se comunicará contigo a la brevedad.</p>
 
     <form>
-
       <div>
         <label>Nombre completo</label>
         <input type="text" id="nombre" required>
@@ -176,57 +206,31 @@
         </select>
       </div>
 
-      <div style="grid-column: span 2;">
+      <div>
         <label>Comentarios (opcional)</label>
-        <textarea id="comentarios" placeholder="¿Tienes alguna duda o solicitud especial?"></textarea>
+        <textarea id="comentarios"></textarea>
       </div>
 
       <button class="btn-enviar" type="submit">Enviar Cotización</button>
-
     </form>
 
     <div class="volver">
       <a href="../index2.html">Volver al Catálogo</a>
     </div>
-
-    <div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
-
   </div>
 
   <script>
     const formulario = document.querySelector("form");
-    const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
 
-    formulario.addEventListener("submit", function(e) {
+    function mostrarAlerta() {
+      const alerta = document.getElementById("alerta-exito");
+      alerta.classList.add("visible");
+      setTimeout(() => alerta.classList.remove("visible"), 2500);
+    }
+
+    formulario.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
-
-      const nombre = document.getElementById("nombre").value;
-      const correo = document.getElementById("correo").value;
-      const telefono = document.getElementById("telefono").value;
-      const pais = document.getElementById("pais").value;
-      const fechaViaje = document.getElementById("fechaViaje").value;
-      const visaAnterior = document.getElementById("visaAnterior").value;
-      const comentarios = document.getElementById("comentarios").value;
-
-      let mensaje = `
-        <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Correo:</strong> ${correo}</p>
-        <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
-        <p><strong>País al que desea viajar:</strong> ${pais}</p>
-        <p><strong>Fecha aproximada de viaje:</strong> ${fechaViaje}</p>
-        <p><strong>Ha solicitado visa antes:</strong> ${visaAnterior}</p>
-      `;
-
-      if (comentarios.trim() !== "") {
-        mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
-      }
-
-    
-      mensajeCotizacion.innerHTML = mensaje;
-
-      
+      mostrarAlerta();
       formulario.reset();
     });
   </script>
