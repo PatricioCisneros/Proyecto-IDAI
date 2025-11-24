@@ -8,17 +8,18 @@
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #2b5876, #4e4376);
+      background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
       color: white;
       line-height: 1.6;
-      cursor: url("https://cdn-icons-png.flaticon.com/512/535/535234.png") 16 16, auto;
+      cursor: url("https://cdn-icons-png.flaticon.com/512/684/684908.png") 16 16, auto;
     }
 
     header {
       text-align: center;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.12);
       padding: 40px 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
     }
 
     header h1 {
@@ -29,7 +30,7 @@
 
     header p {
       font-size: 18px;
-      color: #e0f7fa;
+      color: #dff6ff;
       margin-top: 10px;
     }
 
@@ -42,50 +43,23 @@
     .imagen-principal {
       width: 100%;
       border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
       margin-bottom: 40px;
     }
 
     h2 {
-      color: #fff;
-      border-left: 5px solid #fff;
+      color: #ffffff;
+      border-left: 5px solid #ffffff;
       padding-left: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 26px;
     }
 
     p {
-      color: #f5f5f5;
+      color: #f0f0f0;
       text-align: justify;
       font-size: 16px;
       margin-bottom: 20px;
-    }
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 40px 0;
-    }
-
-    .galeria img {
-      width: 100%;
-      border-radius: 10px;
-      height: 180px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-
-    .requisitos {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-      margin-top: 30px;
     }
 
     ul {
@@ -102,6 +76,34 @@
       content: "🏡 ";
     }
 
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 40px 0;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    .requisitos {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      margin-top: 30px;
+    }
+
     .volver {
       display: flex;
       justify-content: center;
@@ -109,18 +111,18 @@
     }
 
     .volver a {
-      background-color: #fff;
-      color: #4e4376;
+      background-color: #ffffff;
+      color: #1565c0;
       padding: 12px 25px;
       border-radius: 10px;
       font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
     }
 
     .volver a:hover {
-      background-color: #d1c4e9;
+      background-color: #bbdefb;
       transform: scale(1.05);
     }
 
@@ -131,6 +133,7 @@
       color: #e0f7fa;
       font-size: 14px;
       letter-spacing: 0.5px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -142,65 +145,59 @@
   </header>
 
   <div class="contenedor">
-    <img src="../imgs/casa moderna.PNG"
-         alt="Residencia moderna" class="imagen-principal">
+    <img src="../imgs/casa moderna.PNG" class="imagen-principal" alt="Residencia moderna">
 
     <h2>¿Qué es una Visa de Residencia?</h2>
     <p>
       La <strong>Visa de Residencia</strong> te permite vivir legalmente en un país extranjero por un período prolongado.
-      Es ideal para quienes desean establecerse por motivos laborales, familiares o de estudios. A diferencia de la visa de turista,
-      esta permite actividades de trabajo, estudio y residencia permanente, según el tipo de visa otorgada.
+      Es ideal para quienes desean establecerse por motivos laborales, familiares o académicos. A diferencia de la visa de turista,
+      esta permite actividades de trabajo, estudio y residencia permanente, según el tipo que se otorgue.
     </p>
 
     <h2>Tipos de Visa de Residencia</h2>
-    <p>
-      Existen diferentes categorías de residencia según tu propósito:
-    </p>
+    <p>Estas son las principales categorías de residencia:</p>
     <ul>
-      <li><strong>Residencia temporal:</strong> para estancias mayores a 6 meses y hasta 4 años.</li>
-      <li><strong>Residencia permanente:</strong> para quienes buscan vivir de forma indefinida en otro país.</li>
-      <li><strong>Residencia por trabajo:</strong> permite ejercer una actividad laboral formal.</li>
-      <li><strong>Residencia por estudios:</strong> ideal para estudiantes internacionales con programas prolongados.</li>
+      <li><strong>Residencia temporal:</strong> para estancias de 6 meses a 4 años.</li>
+      <li><strong>Residencia permanente:</strong> para vivir de forma indefinida.</li>
+      <li><strong>Residencia por trabajo:</strong> para ejercer una actividad profesional.</li>
+      <li><strong>Residencia por estudios:</strong> para programas académicos largos.</li>
     </ul>
 
     <div class="galeria">
-      <img src="../imgs/casa.PNG" alt="Casa de residencia moderna">
-      <img src="../imgs/cara de señor.PNG" alt="Familia feliz en casa">
-      <img src="../imgs/oficina.png" alt="Oficina moderna de trabajo">
+      <img src="../imgs/casa.PNG" alt="Casa moderna">
+      <img src="../imgs/cara de señor.PNG" alt="Persona en hogar">
+      <img src="../imgs/oficina.png" alt="Oficina moderna">
       <img src="../imgs/manzana.png" alt="Estudiante internacional">
     </div>
 
     <div class="requisitos">
       <h2>Requisitos Generales</h2>
       <ul>
-        <li>Pasaporte válido con vigencia mínima de 6 meses.</li>
-        <li>Formulario de solicitud de visa de residencia completo.</li>
-        <li>Fotografías tamaño pasaporte recientes.</li>
-        <li>Comprobante de medios económicos o contrato laboral.</li>
-        <li>Certificado médico y antecedentes no penales.</li>
+        <li>Pasaporte vigente.</li>
+        <li>Formulario de solicitud completo.</li>
+        <li>Fotografías recientes.</li>
+        <li>Comprobantes económicos o laborales.</li>
+        <li>Certificado médico y antecedentes.</li>
         <li>Pago de derechos consulares.</li>
-        <li>Documentos que acrediten motivo de residencia (trabajo, estudios, familia, etc.).</li>
+        <li>Documentos que acrediten el motivo de residencia.</li>
       </ul>
     </div>
 
-    <h2>Beneficios de Obtener la Visa de Residencia</h2>
+    <h2>Beneficios</h2>
     <p>
-      Obtener una visa de residencia te brinda la oportunidad de integrarte plenamente en la vida del país donde decidas vivir.
-      Podrás acceder a servicios de salud, educación, oportunidades laborales y programas sociales.
-      Además, en muchos casos, podrás solicitar la <strong>residencia permanente</strong> o incluso la ciudadanía después de cierto tiempo.
+      Te permite acceder a servicios de salud, educación, oportunidades laborales y estabilidad a largo plazo.
+      En muchos casos, es el camino hacia la <strong>residencia permanente</strong> o ciudadanía.
     </p>
 
     <h2>Duración y Renovación</h2>
     <p>
-      La duración de una visa de residencia temporal suele ser de <strong>1 a 4 años</strong>, con opción a renovación.
-      En algunos países, después de residir un periodo determinado, podrás aplicar a una <strong>residencia permanente</strong> o naturalización.
+      Suele durar entre <strong>1 y 4 años</strong>, y puede renovarse. En numerosos países, después de un periodo continuo de residencia,
+      es posible solicitar residencia permanente o naturalización.
     </p>
 
     <h2>¿Cómo te ayudamos?</h2>
     <p>
-      En <strong>Tramita tu Visa</strong> te guiamos paso a paso:
-      revisión de tus documentos, llenado de formularios, preparación de entrevistas y seguimiento del proceso hasta la entrega.
-      Nuestra meta es que logres establecerte sin complicaciones en tu nuevo país.
+      En <strong>Tramita tu Visa</strong> te asistimos con revisión de documentos, formularios, entrevistas y seguimiento del trámite hasta la aprobación.
     </p>
 
     <div class="volver">

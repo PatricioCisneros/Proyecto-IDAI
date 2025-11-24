@@ -17,14 +17,14 @@
     header {
       text-align: center;
       padding: 40px 20px;
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
     }
 
     header h1 {
-      font-size: 38px;
+      font-size: 40px;
       margin: 0;
-      letter-spacing: 1px;
     }
 
     .contenedor {
@@ -38,11 +38,11 @@
 
     .banner-img {
       width: 100%;
-      height: 270px;
+      height: 260px;
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 20px;
-      border: 2px solid rgba(255,255,255,0.3);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.35);
     }
 
     h2 {
@@ -54,13 +54,13 @@
     p {
       font-size: 17px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
     label {
@@ -76,7 +76,7 @@
       margin-top: 5px;
       font-size: 15px;
       outline: none;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.85);
     }
 
     textarea {
@@ -85,23 +85,22 @@
     }
 
     .btn-enviar {
-      grid-column: span 2;
       padding: 14px;
-      background: linear-gradient(135deg, #ff80ff, #b43cff);
+      background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
       color: white;
       font-size: 18px;
       font-weight: bold;
-      text-align: center;
       border-radius: 12px;
       cursor: pointer;
       transition: 0.3s;
       border: none;
       box-shadow: 0 5px 14px rgba(0,0,0,0.45);
+      margin-top: 10px;
     }
 
     .btn-enviar:hover {
       transform: scale(1.05);
-      background: linear-gradient(135deg, #ffb3ff, #ce6bff);
+      background: linear-gradient(135deg, #76c7ff, #8c3ccf);
     }
 
     .volver {
@@ -139,79 +138,83 @@
     <img src="../imgs/ttv 1.jpg" class="banner-img" alt="Visa de Residencia">
 
     <h2>Solicita una cotización personalizada</h2>
-    <p>Llena el siguiente formulario y nuestro equipo te enviará el costo del trámite de residencia según tu caso y país destino.</p>
+    <p>Llena el formulario y te enviaremos el costo del trámite según tu caso y país destino.</p>
 
     <form>
 
-  <div>
-    <label>Nombre completo</label>
-    <input type="text" id="nombre" required>
+      <div>
+        <label>Nombre completo</label>
+        <input type="text" id="nombre" required>
+      </div>
+
+      <div>
+        <label>Correo electrónico</label>
+        <input type="email" id="correo" required>
+      </div>
+
+      <div>
+        <label>Teléfono / WhatsApp</label>
+        <input type="text" id="telefono" required>
+      </div>
+
+      <div>
+        <label>País donde deseas obtener la residencia</label>
+        <input type="text" id="pais" placeholder="Ejemplo: Canadá, España..." required>
+      </div>
+
+      <div>
+        <label>Tipo de residencia solicitada</label>
+        <select id="tipoResidencia" required>
+          <option value="">Selecciona una opción</option>
+          <option>Residencia Temporal</option>
+          <option>Residencia Permanente</option>
+          <option>Residencia por Trabajo</option>
+          <option>Residencia por Estudio</option>
+          <option>Residencia por Inversión</option>
+          <option>Residencia Familiar</option>
+        </select>
+      </div>
+
+      <div>
+        <label>¿Viajas con familia?</label>
+        <select id="viajaFamilia" required>
+          <option value="">Selecciona</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Fecha estimada para mudarte</label>
+        <input type="date" id="fechaMudanza" required>
+      </div>
+
+      <div>
+        <label>¿Has solicitado una visa antes?</label>
+        <select id="visaAnterior" required>
+          <option value="">Selecciona</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Comentarios adicionales (opcional)</label>
+        <textarea id="comentarios" placeholder="Incluye detalles importantes para tu caso."></textarea>
+      </div>
+
+      <button class="btn-enviar" type="submit">Enviar Cotización</button>
+
+    </form>
+
+    <div class="volver">
+      <a href="../index2.html">Volver al Catálogo</a>
+    </div>
+
+    <div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
+
   </div>
 
-  <div>
-    <label>Correo electrónico</label>
-    <input type="email" id="correo" required>
-  </div>
-
-  <div>
-    <label>Teléfono / WhatsApp</label>
-    <input type="text" id="telefono" required>
-  </div>
-
-  <div>
-    <label>País donde deseas obtener la residencia</label>
-    <input type="text" id="pais" placeholder="Ejemplo: Canadá, España, Estados Unidos" required>
-  </div>
-
-  <div>
-    <label>Tipo de residencia solicitada</label>
-    <select id="tipoResidencia" required>
-      <option value="">Selecciona una opción</option>
-      <option>Residencia Temporal</option>
-      <option>Residencia Permanente</option>
-      <option>Residencia por Trabajo</option>
-      <option>Residencia por Estudio</option>
-      <option>Residencia por Inversión</option>
-      <option>Residencia Familiar</option>
-    </select>
-  </div>
-
-  <div>
-    <label>¿Viajas con familia?</label>
-    <select id="viajaFamilia" required>
-      <option value="">Selecciona</option>
-      <option>Sí</option>
-      <option>No</option>
-    </select>
-  </div>
-
-  <div>
-    <label>Fecha estimada para mudarte</label>
-    <input type="date" id="fechaMudanza" required>
-  </div>
-
-  <div>
-    <label>¿Has solicitado una visa antes?</label>
-    <select id="visaAnterior" required>
-      <option value="">Selecciona</option>
-      <option>Sí</option>
-      <option>No</option>
-    </select>
-  </div>
-
-  <div style="grid-column: span 2;">
-    <label>Comentarios adicionales (opcional)</label>
-    <textarea id="comentarios" placeholder="Incluye detalles importantes para tu caso."></textarea>
-  </div>
-
-  <button class="btn-enviar" type="submit">Enviar Cotización</button>
-
-</form>
-
-<div class="volver">
-  <a href="../index2.html">Volver al Catálogo</a>
-</div>
-<div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
 
 <script>
 const formulario = document.querySelector("form");
@@ -220,8 +223,7 @@ const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
 formulario.addEventListener("submit", function(e) {
   e.preventDefault();
 
-  alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
-
+  alert("¡Tu cotización ha sido enviada! 🎉\nUn asesor te contactará muy pronto.");
 
   const nombre = document.getElementById("nombre").value;
   const correo = document.getElementById("correo").value;
@@ -233,23 +235,21 @@ formulario.addEventListener("submit", function(e) {
   const visaAnterior = document.getElementById("visaAnterior").value;
   const comentarios = document.getElementById("comentarios").value;
 
-  
   let mensaje = `
     <p><strong>Nombre:</strong> ${nombre}</p>
     <p><strong>Correo:</strong> ${correo}</p>
-    <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
+    <p><strong>Teléfono:</strong> ${telefono}</p>
     <p><strong>País destino:</strong> ${pais}</p>
     <p><strong>Tipo de residencia:</strong> ${tipoResidencia}</p>
     <p><strong>Viaja con familia:</strong> ${viajaFamilia}</p>
-    <p><strong>Fecha estimada para mudarse:</strong> ${fechaMudanza}</p>
+    <p><strong>Fecha de mudanza:</strong> ${fechaMudanza}</p>
     <p><strong>Ha solicitado visa antes:</strong> ${visaAnterior}</p>
   `;
 
   if (comentarios.trim() !== "") {
-    mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
+    mensaje += `<p><strong>Comentarios:</strong> ${comentarios}</p>`;
   }
 
-  
   mensajeCotizacion.innerHTML = mensaje;
 
   formulario.reset();
