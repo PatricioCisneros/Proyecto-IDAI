@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tramita tu Visa</title>
   <link rel="stylesheet" href="style.css">
-
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -15,138 +13,128 @@
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #4f8fe4, #5a58e2, #6dd5fa);
       color: #fff;
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
       cursor: url("TTV/avion.png"), auto;
+      font-size: 18px;
     }
 
     h1, h2, h3, p, em { margin: 0; }
-
     a { text-decoration: none; }
 
-    
+    /* ----------------------- TOPBAR ----------------------- */
     .topbar {
-  width: 100%;
-  background: linear-gradient(90deg, rgba(255,255,255,0.20), rgba(255,255,255,0.15), rgba(255,255,255,0.20));
-  padding: 12px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 2000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
+      width: 100%;
+      background: linear-gradient(90deg, rgba(255,255,255,0.20), rgba(255,255,255,0.15), rgba(255,255,255,0.20));
+      padding: 16px 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
 
-.topbar .phones {
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 6px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .topbar .phones {
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
+    .topbar .phones span {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 8px 14px;
+      border-radius: 12px;
+    }
 
-.topbar .phones span {
-  background: rgba(255, 255, 255, 0.18);
-  padding: 6px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
+    .social-icons a {
+      color: #ffffff;
+      margin-left: 12px;
+      font-size: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.28);
+      transition: 0.3s ease;
+    }
 
+    .social-icons a:hover {
+      transform: scale(1.18) translateY(-2px);
+      background: rgba(255,255,255,0.30);
+      box-shadow: 0 0 10px rgba(255,255,255,0.7);
+    }
 
-.social-icons a {
-  color: #ffffff;
-  margin-left: 12px;
-  font-size: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 37px;
-  height: 37px;
-  background: rgba(255,255,255,0.18);
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.28);
-  transition: 0.3s ease;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
-
-.social-icons a:hover {
-  transform: scale(1.18) translateY(-2px);
-  background: rgba(255,255,255,0.30);
-  box-shadow: 0 0 10px rgba(255,255,255,0.7);
-}
-    
-
+    /* ----------------------- HEADER ----------------------- */
     header {
       background: linear-gradient(90deg, #3949ab, #5c6bc0, #7986cb);
-      padding: 40px 20px;
+      padding: 55px 20px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      position: relative;
     }
 
     header h1 {
-      font-size: 50px;
+      font-size: 58px;
       letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
     }
 
     header p {
-      font-size: 20px;
+      font-size: 24px;
+      margin-top: 10px;
       color: #e3f2fd;
     }
 
+    /* ----------------------- HERO ----------------------- */
     .hero {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      margin: 40px auto;
+      margin: 50px auto;
       width: 90%;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.15);
       animation: fadeInUp 1.2s ease;
     }
 
     .hero img {
       border-radius: 20px;
-      width: 230px;
-      height: 230px;
+      width: 260px;
+      height: 260px;
       object-fit: cover;
-      margin: 10px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      margin: 15px;
+      transition: transform 0.4s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     .hero img:hover {
       transform: scale(1.08);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4);
     }
 
     .hero h2 {
-      font-size: 30px;
-      margin: 0 20px;
+      font-size: 36px;
+      margin: 0 25px;
       text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-      animation: floatText 3s ease-in-out infinite;
     }
 
+    /* ----------------------- SECTION ----------------------- */
     section {
-      max-width: 950px;
-      margin: 20px auto 60px;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      max-width: 980px;
+      margin: 25px auto 70px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.3);
       backdrop-filter: blur(8px);
       animation: fadeIn 1.2s ease;
     }
@@ -154,68 +142,65 @@
     section em {
       display: block;
       text-align: center;
-      font-size: 22px;
-      margin-bottom: 15px;
+      font-size: 26px;
+      margin-bottom: 20px;
       font-weight: bold;
+      letter-spacing: 1px;
     }
 
     .img-gallery {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 45px;
-      margin-top: 40px;
+      gap: 50px;
+      margin-top: 45px;
     }
 
     .img-gallery img {
-  border-radius: 15px;
-  width: 260px;        
-  height: 180px;       
-  object-fit: cover;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.img-gallery img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.link {
-  text-align: center;
-  margin-top: 45px;
-}
-
-.link a {
-  display: inline-block;
-  background: linear-gradient(90deg, #ffeb3b, #fdd835);
-  color: #283593;
-  padding: 14px 28px;
-  border-radius: 14px;
-  font-weight: 700;
-  font-size: 19px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  cursor: url("TTV/avion.png"), pointer;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.link a:hover {
-  transform: scale(1.1) translateY(-2px);
-  background: linear-gradient(90deg, #fff176, #ffee58);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
-}
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.25);
-      color: #dce9ff;
-      font-size: 14px;
-      box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      width: 280px;
+      height: 190px;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: 0.4s ease;
     }
 
+    .img-gallery img:hover {
+      transform: scale(1.07);
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .link a {
+      display: inline-block;
+      background: linear-gradient(90deg, #ffeb3b, #fdd835);
+      color: #283593;
+      padding: 16px 32px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .link a:hover {
+      transform: scale(1.1) translateY(-2px);
+    }
+
+    /* ----------------------- FOOTER ----------------------- */
+    footer {
+      text-align: center;
+      padding: 23px;
+      background: rgba(0,0,0,0.25);
+      color: #dce9ff;
+      font-size: 15px;
+    }
+
+    /* ----------------------- ANIMATIONS ----------------------- */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
@@ -225,7 +210,7 @@
 
 <body>
 
-  
+  <!-- TOPBAR -->
   <div class="topbar">
     <div class="phones">
       <i class="fa-solid fa-phone"></i> 818-180-056-8 &nbsp; | &nbsp;
@@ -238,32 +223,36 @@
       <a href="#"><i class="fa-brands fa-tiktok"></i></a>
     </div>
   </div>
-  
 
+  <!-- HEADER -->
   <header>
     <h1>Tramita tu Visa</h1>
-    <p>Fácil, rápido y seguro</p>
+    <p>Asesoría profesional, rápida y confiable</p>
   </header>
 
+  <!-- HERO -->
   <div class="hero">
     <img src="imgs/ttv 1.jpg" alt="Imagen visa 1">
-    <h2>¡Tramítala ya!</h2>
+    <h2>¡Comienza tu proceso hoy mismo!</h2>
     <img src="imgs/ttv 2.jpg" alt="Imagen visa 2">
   </div>
 
+  <!-- SECTION -->
   <section>
-    <em>Pasos para tramitar tu visa:</em>
+    <em>Proceso para tramitar tu visa con nosotros:</em>
 
     <p>
-      Con nosotros es fácil y seguro hacer trámites para sacar o renovar tu visa. 
-      Contáctanos para agendar tu cita y te diremos los documentos necesarios que necesitas traer.
+      En <strong>Tramita tu Visa</strong> ofrecemos un acompañamiento profesional y seguro para solicitar o renovar tu visa.
+      Nuestro objetivo es simplificar el procedimiento, brindarte claridad en cada paso y asegurarnos de que acudas preparado a tu cita consular.
     </p>
 
+    <br>
+
     <p>
-      <strong>1. Primera cita de diagnóstico:</strong> Evaluamos tu situación actual y documentos.<br><br>
-      <strong>2. Asesoría personalizada:</strong> Te damos costos, requisitos y tiempos reales.<br><br>
-      <strong>3. Agendamiento de cita consular:</strong> Gestionamos tu cita e incluso aceleramos el proceso (opcional).<br><br>
-      <strong>4. Simulación previa:</strong> Te preparamos para la entrevista con preguntas reales.
+      <strong>1. Evaluación inicial:</strong> Revisamos tu situación y requisitos actuales.<br><br>
+      <strong>2. Asesoría personalizada:</strong> Explicamos costos, documentos obligatorios y tiempos aproximados.<br><br>
+      <strong>3. Gestión de cita consular:</strong> Programamos tu cita según disponibilidad y necesidades.<br><br>
+      <strong>4. Preparación para la entrevista:</strong> Simulamos preguntas reales y te damos recomendaciones.
     </p>
 
     <div class="img-gallery">
@@ -272,10 +261,11 @@
     </div>
 
     <div class="link">
-      <a href="index2.html">Ir al catálogo de TTV</a>
+      <a href="index2.html">Ver catálogo de servicios</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     © 2025 Tramita tu Visa | Todos los derechos reservados
   </footer>
