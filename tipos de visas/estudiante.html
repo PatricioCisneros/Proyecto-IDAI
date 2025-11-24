@@ -10,8 +10,7 @@
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
       color: white;
-      line-height: 1.6;
-      cursor: url("https://cdn-icons-png.flaticon.com/512/684/684908.png") 16 16, auto;
+      line-height: 1.7;
     }
 
     header {
@@ -22,197 +21,206 @@
     }
 
     header h1 {
-      font-size: 42px;
+      font-size: 44px;
       margin: 0;
-      letter-spacing: 1px;
     }
 
     header p {
-      font-size: 18px;
-      color: #e0f7fa;
-      margin-top: 10px;
+      font-size: 19px;
+      color: #dff8ff;
+      margin-top: 8px;
     }
 
     .contenedor {
       max-width: 1100px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 0 25px;
     }
 
     .imagen-principal {
       width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      border-radius: 18px;
+      height: 330px;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
       margin-bottom: 40px;
     }
 
     h2 {
-      color: #fff;
+      font-size: 26px;
+      margin-bottom: 12px;
       border-left: 5px solid #fff;
       padding-left: 10px;
-      margin-bottom: 10px;
     }
 
     p {
-      color: #f5f5f5;
+      font-size: 17px;
+      margin-bottom: 18px;
       text-align: justify;
-      font-size: 16px;
-      margin-bottom: 20px;
+      color: #f7f7f7;
     }
 
+    
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
       margin: 40px 0;
     }
 
     .galeria img {
       width: 100%;
-      border-radius: 10px;
-      height: 180px;
+      height: 190px;
       object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
     }
 
     .galeria img:hover {
       transform: scale(1.05);
     }
 
+    
     .requisitos {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.18);
+      padding: 22px;
       border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
       margin-top: 30px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
     }
 
     ul {
+      padding-left: 0;
       list-style: none;
-      padding: 0;
     }
 
     ul li {
+      font-size: 17px;
       padding: 8px 0;
-      font-size: 16px;
     }
 
     ul li::before {
-      content: "🎓 ";
+      content: "📘 ";
     }
 
+    
     form {
       margin-top: 30px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.18);
       border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      padding: 25px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     }
 
     form label {
-      display: block;
-      margin-bottom: 8px;
       font-weight: bold;
+      margin-bottom: 6px;
+      display: block;
+      font-size: 16px;
     }
 
     form input, form select {
       width: 100%;
-      padding: 10px;
-      border: none;
+      padding: 12px;
       border-radius: 10px;
-      margin-bottom: 15px;
+      border: none;
+      margin-bottom: 18px;
+      font-size: 15px;
+      background: rgba(255,255,255,0.9);
     }
 
     form button {
-      background-color: #fff;
-      color: #1565c0;
-      padding: 12px 25px;
-      border-radius: 10px;
-      font-weight: bold;
+      background: linear-gradient(135deg, #ff80ff, #b43cff);
+      color: white;
       border: none;
+      padding: 14px 30px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 17px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.45);
     }
 
     form button:hover {
-      background-color: #bbdefb;
       transform: scale(1.05);
+      background: linear-gradient(135deg, #ffb3ff, #ce6bff);
     }
 
+    
     .volver {
-      display: flex;
-      justify-content: center;
-      margin: 50px 0;
+      text-align: center;
+      margin: 40px 0;
     }
 
     .volver a {
       background-color: #fff;
       color: #1565c0;
-      padding: 12px 25px;
-      border-radius: 10px;
-      font-weight: bold;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-size: 17px;
       text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .volver a:hover {
-      background-color: #bbdefb;
       transform: scale(1.05);
+      background-color: #bbdefb;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #e0f7fa;
+      background: rgba(255,255,255,0.12);
       font-size: 14px;
-      letter-spacing: 0.5px;
+      color: #e0f7fa;
     }
   </style>
 </head>
+
 <body>
 
   <header>
     <h1>Visa de Estudiante</h1>
-    <p>Tu futuro académico comienza aquí — Te ayudamos a tramitar tu visa</p>
+    <p>Impulsa tu formación académica con nuestro acompañamiento profesional</p>
   </header>
 
   <div class="contenedor">
-    <img src="../imgs/niño.png" alt="Visa de estudiante" class="imagen-principal">
+    <img src="../imgs/niño.png" class="imagen-principal">
 
     <h2>¿Qué es una Visa de Estudiante?</h2>
     <p>
-      La <strong>Visa de Estudiante</strong> te permite vivir en otro país con el propósito de realizar estudios 
-      en una institución educativa reconocida. Es ideal para quienes desean ampliar sus conocimientos, 
-      aprender un nuevo idioma o cursar una carrera universitaria en el extranjero.
+      La <strong>Visa de Estudiante</strong> es un permiso que te permite estudiar legalmente en otro país.
+      Con ella podrás asistir a clases, vivir una experiencia internacional y acceder a nuevas oportunidades académicas.
     </p>
 
     <h2>Beneficios</h2>
     <p>
-      Obtener esta visa te da la oportunidad de estudiar en el extranjero, 
-      acceder a programas académicos de calidad y vivir una experiencia internacional enriquecedora. 
-      Algunos países también permiten trabajar medio tiempo mientras estudias.
+      Esta visa te permite integrarte a programas formativos de alta calidad, mejorar tu dominio del idioma
+      y ampliar tus oportunidades laborales a futuro. En algunos países incluso es posible trabajar medio tiempo
+      mientras estudias.
     </p>
 
     <div class="galeria">
-      <img src="../imgs/matematicas.png" alt="Campus universitario">
-      <img src="../imgs/niño.png" alt="Biblioteca moderna">
-      <img src="../imgs/auditorio.png" alt="Clases internacionales">
-      <img src="../imgs/img tenis para correr turista.PNG" alt="Estudiantes felices">
+      <img src="../imgs/matematicas.png">
+      <img src="../imgs/niño.png">
+      <img src="../imgs/auditorio.png">
+      <img src="../imgs/img tenis para correr turista.PNG">
     </div>
 
     <div class="requisitos">
       <h2>Requisitos Generales</h2>
       <ul>
-        <li>Pasaporte vigente con al menos 6 meses de validez.</li>
+        <li>Pasaporte vigente con mínimo 6 meses de validez.</li>
         <li>Carta de aceptación de una institución educativa.</li>
-        <li>Comprobante de pago de matrícula o inscripción.</li>
-        <li>Prueba de fondos suficientes para manutención y estudios.</li>
-        <li>Seguro médico internacional válido.</li>
+        <li>Comprobante de matrícula o inscripción.</li>
+        <li>Prueba de solvencia económica.</li>
+        <li>Seguro médico internacional.</li>
         <li>Fotografía tipo pasaporte.</li>
-        <li>Formulario de solicitud de visa completado.</li>
+        <li>Formulario de solicitud completado.</li>
       </ul>
     </div>
 
@@ -220,19 +228,18 @@
     <p>Completa tus datos para recibir asesoría personalizada:</p>
 
     <form id="formVisa">
-      <label for="nombre">Nombre completo:</label>
-      <input type="text" id="nombre" placeholder="Ej. Dario Gzz">
+      <label>Nombre completo:</label>
+      <input type="text" id="nombre">
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" placeholder="Ej. Dario@email.com">
+      <label>Correo electrónico:</label>
+      <input type="email" id="email">
 
-      <label for="pais">País destino de estudios:</label>
-      <input type="text" id="pais" placeholder="Ej. Canadá">
+      <label>País destino de estudios:</label>
+      <input type="text" id="pais">
 
-      <label for="nivel">Nivel de estudios:</label>
+      <label>Nivel de estudios:</label>
       <select id="nivel">
         <option value="">Selecciona una opción</option>
-        <option>Idioma</option>
         <option>Universidad</option>
         <option>Maestría</option>
         <option>Doctorado</option>
@@ -251,26 +258,21 @@
   </footer>
 
   <script>
-    
     document.getElementById("formVisa").addEventListener("submit", function(e) {
       e.preventDefault();
+
       const nombre = document.getElementById("nombre").value.trim();
       const email = document.getElementById("email").value.trim();
       const pais = document.getElementById("pais").value.trim();
       const nivel = document.getElementById("nivel").value;
 
       if (!nombre || !email || !pais || !nivel) {
-        alert("Por favor, completa todos los campos antes de enviar.");
+        alert("Por favor completa todos los campos antes de continuar.");
         return;
       }
 
-      if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
-        alert("Por favor, ingresa un correo electrónico válido.");
-        return;
-      }
-
-      alert("¡Solicitud enviada correctamente! Pronto nos pondremos en contacto contigo.");
-      document.getElementById("formVisa").reset();
+      alert("¡Solicitud enviada correctamente! Nos pondremos en contacto contigo pronto.");
+      this.reset();
     });
   </script>
 

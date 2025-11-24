@@ -11,7 +11,7 @@
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
       color: white;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     header {
@@ -22,23 +22,23 @@
     }
 
     header h1 {
-      font-size: 38px;
+      font-size: 40px;
       margin: 0;
       letter-spacing: 1px;
     }
 
     .contenedor {
-      max-width: 900px;
+      max-width: 850px;
       margin: 40px auto;
       background: rgba(255,255,255,0.15);
-      padding: 30px;
+      padding: 35px;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     }
 
     .banner-img {
       width: 100%;
-      height: 270px;
+      height: 280px;
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 20px;
@@ -47,20 +47,21 @@
 
     h2 {
       text-align: center;
-      font-size: 26px;
-      margin-bottom: 10px;
+      font-size: 27px;
+      margin-bottom: 12px;
     }
 
     p {
       font-size: 17px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
+    /* FORMULARIO EN UNA SOLA COLUMNA */
     form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
     label {
@@ -73,10 +74,9 @@
       padding: 12px;
       border-radius: 10px;
       border: none;
-      margin-top: 5px;
       font-size: 15px;
+      background: rgba(255,255,255,0.85);
       outline: none;
-      background: rgba(255,255,255,0.8);
     }
 
     textarea {
@@ -84,19 +84,28 @@
       height: 120px;
     }
 
+    .seccion-titulo {
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+      border-left: 4px solid #fff;
+      padding-left: 10px;
+      color: #f0f8ff;
+    }
+
     .btn-enviar {
-      grid-column: span 2;
-      padding: 14px;
+      margin-top: 10px;
+      padding: 15px;
       background: linear-gradient(135deg, #ff80ff, #b43cff);
       color: white;
-      font-size: 18px;
+      font-size: 19px;
       font-weight: bold;
       text-align: center;
       border-radius: 12px;
       cursor: pointer;
       transition: 0.3s;
       border: none;
-      box-shadow: 0 5px 14px rgba(0,0,0,0.45);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.45);
     }
 
     .btn-enviar:hover {
@@ -106,24 +115,25 @@
 
     .volver {
       text-align: center;
-      margin-top: 25px;
+      margin-top: 30px;
     }
 
     .volver a {
       background-color: #fff;
       color: #1565c0;
-      padding: 12px 25px;
+      padding: 12px 24px;
       border-radius: 10px;
       font-weight: bold;
       text-decoration: none;
       transition: 0.3s;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .volver a:hover {
       transform: scale(1.05);
       background: #bbdefb;
     }
+
   </style>
 </head>
 
@@ -135,67 +145,54 @@
 
   <div class="contenedor">
 
-    <img src="../imgs/ttv 6.jpg" class="banner-img" alt="Visa de Estudiante">
+    <img src="../imgs/ttv 6.jpg" class="banner-img">
 
     <h2>Solicita tu cotización personalizada</h2>
-    <p>Completa el formulario y uno de nuestros asesores te enviará el costo detallado del trámite para tu visa de estudiante.</p>
+    <p>Completa el formulario y un asesor te enviará el costo detallado del trámite según tu caso académico.</p>
 
     <form>
 
-      <div>
-        <label>Nombre completo</label>
-        <input type="text" id="nombre" required>
-      </div>
+      <div class="seccion-titulo">Datos personales</div>
 
-      <div>
-        <label>Correo electrónico</label>
-        <input type="email" id="correo" required>
-      </div>
+      <label>Nombre completo</label>
+      <input type="text" id="nombre" required>
 
-      <div>
-        <label>Teléfono / WhatsApp</label>
-        <input type="text" id="telefono" required>
-      </div>
+      <label>Correo electrónico</label>
+      <input type="email" id="correo" required>
 
-      <div>
-        <label>País donde deseas estudiar</label>
-        <input type="text" id="pais" placeholder="Ejemplo: Canadá, Estados Unidos" required>
-      </div>
+      <label>Teléfono / WhatsApp</label>
+      <input type="text" id="telefono" required>
 
-      <div>
-        <label>Institución o universidad (si aplica)</label>
-        <input type="text" id="institucion" placeholder="Ejemplo: Harvard, UDEM, Universidad del Norte">
-      </div>
 
-      <div>
-        <label>Duración del programa</label>
-        <select id="duracion" required>
-          <option value="">Selecciona</option>
-          <option>Menos de 6 meses</option>
-          <option>6 meses a 1 año</option>
-          <option>1 a 2 años</option>
-          <option>Más de 2 años</option>
-        </select>
-      </div>
+      <div class="seccion-titulo">Información académica</div>
 
-      <div>
-        <label>Fecha aproximada de inicio</label>
-        <input type="date" id="fechaInicio" required>
-      </div>
+      <label>País donde deseas estudiar</label>
+      <input type="text" id="pais" placeholder="Ejemplo: Canadá, Estados Unidos" required>
 
-      <div>
-        <label>¿Has solicitado una visa antes?</label>
-        <select id="visaAnterior" required>
-          <option value="">Selecciona una opción</option>
-          <option>Sí</option>
-          <option>No</option>
-        </select>
-      </div>
+      <label>Institución o universidad (si aplica)</label>
+      <input type="text" id="institucion" placeholder="Ejemplo: Harvard, UDEM, Universidad del Norte">
 
-      <div style="grid-column: span 2;">
-        <label>Comentarios (opcional)</label>
-        <textarea id="comentarios" placeholder="Comparte algún detalle adicional sobre tu trámite."></textarea>
-      </div>
+      <label>Duración del programa</label>
+      <select id="duracion" required>
+        <option value="">Selecciona</option>
+        <option>Menos de 6 meses</option>
+        <option>6 meses a 1 año</option>
+        <option>1 a 2 años</option>
+        <option>Más de 2 años</option>
+      </select>
+
+      <label>Fecha aproximada de inicio</label>
+      <input type="date" id="fechaInicio" required>
+
+      <label>¿Has solicitado una visa antes?</label>
+      <select id="visaAnterior" required>
+        <option value="">Selecciona una opción</option>
+        <option>Sí</option>
+        <option>No</option>
+      </select>
+
+      <label>Comentarios adicionales (opcional)</label>
+      <textarea id="comentarios" placeholder="Comparte algún detalle adicional sobre tu trámite."></textarea>
 
       <button class="btn-enviar" type="submit">Enviar Cotización</button>
 
@@ -205,8 +202,7 @@
       <a href="../index2.html">Volver al Catálogo</a>
     </div>
 
-    
-    <div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
+    <div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold;"></div>
 
   </div>
 
@@ -217,9 +213,8 @@
     formulario.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+      alert("¡Tu cotización ha sido enviada! 🎓✨\n\nUn asesor se pondrá en contacto contigo muy pronto.");
 
-      
       const nombre = document.getElementById("nombre").value;
       const correo = document.getElementById("correo").value;
       const telefono = document.getElementById("telefono").value;
@@ -230,7 +225,6 @@
       const visaAnterior = document.getElementById("visaAnterior").value;
       const comentarios = document.getElementById("comentarios").value;
 
-      
       let mensaje = `
         <p><strong>Nombre:</strong> ${nombre}</p>
         <p><strong>Correo:</strong> ${correo}</p>
@@ -246,9 +240,7 @@
         mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
       }
 
-      
       mensajeCotizacion.innerHTML = mensaje;
-
       formulario.reset();
     });
   </script>
