@@ -156,9 +156,9 @@
 
   
   <div id="alerta-exito">
-    <span style="font-size: 20px;">✔</span>
-    Cotización enviada correctamente
-  </div>
+  <span style="font-size: 20px; color: #2e7d32;">✔</span>
+  Cotización enviada correctamente
+</div>
 
   <header>
     <h1>Cotización - Visa de Turista</h1>
@@ -222,52 +222,49 @@
   </div>
 
   <script>
-  const formulario = document.querySelector("form");
+const formulario = document.querySelector("form");
+const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
 
-  function mostrarAlerta() {
-    const alerta = document.getElementById("alerta-exito");
-    alerta.classList.add("visible");
-    setTimeout(() => alerta.classList.remove("visible"), 2500);
+function mostrarAlerta() {
+  const alerta = document.getElementById("alerta-exito");
+  alerta.classList.add("visible");
+  setTimeout(() => alerta.classList.remove("visible"), 2500);
+}
+
+formulario.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  mostrarAlerta();
+
+  const nombre = document.getElementById("nombre").value;
+  const correo = document.getElementById("correo").value;
+  const telefono = document.getElementById("telefono").value;
+  const pais = document.getElementById("pais").value;
+  const empresa = document.getElementById("empresa").value;
+  const oferta = document.getElementById("oferta").value;
+  const fechaInicio = document.getElementById("fechaInicio").value;
+  const tipoTrabajo = document.getElementById("tipoTrabajo").value;
+  const comentarios = document.getElementById("comentarios").value;
+
+  let mensaje = `
+    <p><strong>Nombre:</strong> ${nombre}</p>
+    <p><strong>Correo:</strong> ${correo}</p>
+    <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
+    <p><strong>País donde trabajará:</strong> ${pais}</p>
+    <p><strong>Empresa contratante:</strong> ${empresa}</p>
+    <p><strong>Oferta laboral:</strong> ${oferta}</p>
+    <p><strong>Fecha de inicio:</strong> ${fechaInicio}</p>
+    <p><strong>Tipo de trabajo:</strong> ${tipoTrabajo}</p>
+  `;
+
+  if (comentarios.trim() !== "") {
+    mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
   }
 
-  formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
+  mensajeCotizacion.innerHTML = mensaje;
 
-    // Obtener datos del cliente
-    const nombre = document.getElementById("nombre").value;
-    const correo = document.getElementById("correo").value;
-    const telefono = document.getElementById("telefono").value;
-    const pais = document.getElementById("pais").value;
-    const fechaViaje = document.getElementById("fechaViaje").value;
-    const visaAnterior = document.getElementById("visaAnterior").value;
-    const comentarios = document.getElementById("comentarios").value || "Sin comentarios";
-
-    // Mostrar datos debajo del formulario
-    document.getElementById("resultado").innerHTML = `
-      <div style="
-        background: rgba(255,255,255,0.2);
-        padding: 20px;
-        border-radius: 15px;
-        margin-top: 25px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      ">
-        <h2 style="text-align:center; margin-bottom:10px;">Datos enviados</h2>
-        <p><strong>Nombre:</strong> ${nombre}</p>
-        <p><strong>Correo:</strong> ${correo}</p>
-        <p><strong>Teléfono:</strong> ${telefono}</p>
-        <p><strong>País de viaje:</strong> ${pais}</p>
-        <p><strong>Fecha aproximada:</strong> ${fechaViaje}</p>
-        <p><strong>¿Ha solicitado visa antes?:</strong> ${visaAnterior}</p>
-        <p><strong>Comentarios:</strong> ${comentarios}</p>
-      </div>
-    `;
-
-    // Mostrar alerta
-    mostrarAlerta();
-
-    // Reset después de mostrar los datos
-    formulario.reset();
-  });
+  formulario.reset();
+});
 </script>
 
 
