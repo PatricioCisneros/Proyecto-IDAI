@@ -16,21 +16,21 @@
 
     header {
       text-align: center;
-      padding: 40px 20px;
-      background: rgba(255,255,255,0.15);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      padding: 35px 20px;
+      background: rgba(255,255,255,0.18);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
     }
 
     header h1 {
-      font-size: 38px;
       margin: 0;
+      font-size: 40px;
       letter-spacing: 1px;
     }
 
     .contenedor {
       max-width: 900px;
       margin: 40px auto;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.12);
       padding: 30px;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
@@ -38,7 +38,7 @@
 
     .banner-img {
       width: 100%;
-      height: 270px;
+      height: 260px;
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 20px;
@@ -47,20 +47,26 @@
 
     h2 {
       text-align: center;
+      margin-bottom: 8px;
       font-size: 26px;
-      margin-bottom: 10px;
     }
 
     p {
-      font-size: 17px;
       text-align: center;
-      margin-bottom: 20px;
+      font-size: 17px;
+      margin-bottom: 25px;
     }
 
+    /* Formulario en una sola columna */
     form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    form div {
+      display: flex;
+      flex-direction: column;
     }
 
     label {
@@ -76,7 +82,7 @@
       margin-top: 5px;
       font-size: 15px;
       outline: none;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.85);
     }
 
     textarea {
@@ -85,18 +91,17 @@
     }
 
     .btn-enviar {
-      grid-column: span 2;
       padding: 14px;
       background: linear-gradient(135deg, #ff80ff, #b43cff);
       color: white;
       font-size: 18px;
       font-weight: bold;
-      text-align: center;
       border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
       border: none;
+      cursor: pointer;
+      margin-top: 5px;
       box-shadow: 0 5px 14px rgba(0,0,0,0.45);
+      transition: 0.3s;
     }
 
     .btn-enviar:hover {
@@ -106,7 +111,7 @@
 
     .volver {
       text-align: center;
-      margin-top: 25px;
+      margin-top: 30px;
     }
 
     .volver a {
@@ -126,11 +131,10 @@
     }
 
     #mensaje-cotizacion {
+      margin-top: 25px;
       text-align: center;
-      margin-top: 20px;
       font-size: 16px;
       font-weight: bold;
-      color: #fff;
     }
   </style>
 </head>
@@ -146,7 +150,7 @@
     <img src="../imgs/ttv 7.jpg" class="banner-img" alt="Visa de Trabajo">
 
     <h2>Solicita tu cotización personalizada</h2>
-    <p>Completa el formulario y nuestros asesores te enviarán el costo exacto del trámite y los requisitos de tu visa de trabajo.</p>
+    <p>Proporciona tu información y un asesor te enviará el costo exacto y los requisitos según tu visa laboral.</p>
 
     <form>
 
@@ -185,7 +189,7 @@
       </div>
 
       <div>
-        <label>Fecha estimada para iniciar el empleo</label>
+        <label>Fecha estimada de inicio</label>
         <input type="date" id="fechaInicio" required>
       </div>
 
@@ -201,7 +205,7 @@
         </select>
       </div>
 
-      <div style="grid-column: span 2;">
+      <div>
         <label>Comentarios (opcional)</label>
         <textarea id="comentarios" placeholder="Comparte detalles adicionales que puedan ayudar con tu cotización."></textarea>
       </div>
@@ -210,15 +214,13 @@
 
     </form>
 
+    <div id="mensaje-cotizacion"></div>
+
     <div class="volver">
       <a href="../index2.html">Volver al Catálogo</a>
     </div>
 
-    <div id="mensaje-cotizacion"></div>
-
   </div>
-
-  
 
   <script>
     const formulario = document.querySelector("form");
@@ -227,7 +229,7 @@
     formulario.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      alert("¡Tu cotización ha sido enviada! 🎉\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+      alert("¡Tu cotización ha sido enviada! 🎉\nUn asesor se pondrá en contacto contigo muy pronto.");
 
       const nombre = document.getElementById("nombre").value;
       const correo = document.getElementById("correo").value;
@@ -245,8 +247,8 @@
         <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
         <p><strong>País donde trabajará:</strong> ${pais}</p>
         <p><strong>Empresa contratante:</strong> ${empresa}</p>
-        <p><strong>Cuenta con oferta laboral:</strong> ${oferta}</p>
-        <p><strong>Fecha estimada de inicio:</strong> ${fechaInicio}</p>
+        <p><strong>Oferta laboral:</strong> ${oferta}</p>
+        <p><strong>Fecha de inicio:</strong> ${fechaInicio}</p>
         <p><strong>Tipo de trabajo:</strong> ${tipoTrabajo}</p>
       `;
 
