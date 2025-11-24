@@ -57,7 +57,7 @@
       margin-bottom: 25px;
     }
 
-    /* FORMULARIO EN UNA SOLA COLUMNA */
+    /* FORMULARIO */
     form {
       display: flex;
       flex-direction: column;
@@ -134,10 +134,39 @@
       background: #bbdefb;
     }
 
+    /* ALERTA A ESTILO TURISTA */
+    #alerta-exito {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.9);
+      color: #2e7d32;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      font-weight: bold;
+    }
+
+    #alerta-exito.visible {
+      opacity: 1;
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- ALERTA TIPO TURISTA -->
+  <div id="alerta-exito">
+    <span style="font-size: 20px;">✔</span>
+    Cotización enviada correctamente
+  </div>
 
   <header>
     <h1>Cotización - Visa de Estudiante</h1>
@@ -163,14 +192,13 @@
       <label>Teléfono / WhatsApp</label>
       <input type="text" id="telefono" required>
 
-
       <div class="seccion-titulo">Información académica</div>
 
       <label>País donde deseas estudiar</label>
-      <input type="text" id="pais" placeholder="Ejemplo: Canadá, Estados Unidos" required>
+      <input type="text" id="pais" required>
 
       <label>Institución o universidad (si aplica)</label>
-      <input type="text" id="institucion" placeholder="Ejemplo: Harvard, UDEM, Universidad del Norte">
+      <input type="text" id="institucion">
 
       <label>Duración del programa</label>
       <select id="duracion" required>
@@ -192,7 +220,7 @@
       </select>
 
       <label>Comentarios adicionales (opcional)</label>
-      <textarea id="comentarios" placeholder="Comparte algún detalle adicional sobre tu trámite."></textarea>
+      <textarea id="comentarios"></textarea>
 
       <button class="btn-enviar" type="submit">Enviar Cotización</button>
 
@@ -210,10 +238,16 @@
     const formulario = document.querySelector("form");
     const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
 
+    function mostrarAlerta() {
+      const alerta = document.getElementById("alerta-exito");
+      alerta.classList.add("visible");
+      setTimeout(() => alerta.classList.remove("visible"), 2500);
+    }
+
     formulario.addEventListener("submit", function(e) {
       e.preventDefault();
 
-      alert("¡Tu cotización ha sido enviada! 🎓✨\n\nUn asesor se pondrá en contacto contigo muy pronto.");
+      mostrarAlerta(); // <-- ALERTA A ESTILO TURISTA
 
       const nombre = document.getElementById("nombre").value;
       const correo = document.getElementById("correo").value;
