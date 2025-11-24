@@ -123,11 +123,48 @@
       transform: scale(1.05);
       background: #bbdefb;
     }
-  </style>
 
+    #mensaje-cotizacion {
+      text-align:center;
+      margin-top: 20px;
+      font-size:16px;
+      font-weight:bold;
+      color:#fff;
+    }
+
+    /* ALERTA ESTILO TURISTA/ESTUDIANTE */
+    #alerta-exito {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.9);
+      color: #2e7d32;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      font-weight: bold;
+    }
+
+    #alerta-exito.visible {
+      opacity: 1;
+    }
+
+  </style>
 </head>
 
 <body>
+
+  <div id="alerta-exito">
+    <span style="font-size: 20px;">✔</span>
+    Cotización enviada correctamente
+  </div>
 
   <header>
     <h1>Cotización - Visa de Residencia</h1>
@@ -207,54 +244,57 @@
 
     </form>
 
+    <div id="mensaje-cotizacion"></div>
+
     <div class="volver">
       <a href="../index2.html">Volver al Catálogo</a>
     </div>
 
-    <div id="mensaje-cotizacion" style="text-align:center; margin-top:20px; font-size:16px; font-weight:bold; color:#fff;"></div>
-
   </div>
 
+  <script>
+    const formulario = document.querySelector("form");
+    const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
 
-<script>
-const formulario = document.querySelector("form");
-const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
+    function mostrarAlerta() {
+      const alerta = document.getElementById("alerta-exito");
+      alerta.classList.add("visible");
+      setTimeout(() => alerta.classList.remove("visible"), 2500);
+    }
 
-formulario.addEventListener("submit", function(e) {
-  e.preventDefault();
+    formulario.addEventListener("submit", function(e) {
+      e.preventDefault();
+      mostrarAlerta();
 
-  alert("¡Tu cotización ha sido enviada! 🎉\nUn asesor te contactará muy pronto.");
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const telefono = document.getElementById("telefono").value;
+      const pais = document.getElementById("pais").value;
+      const tipoResidencia = document.getElementById("tipoResidencia").value;
+      const viajaFamilia = document.getElementById("viajaFamilia").value;
+      const fechaMudanza = document.getElementById("fechaMudanza").value;
+      const visaAnterior = document.getElementById("visaAnterior").value;
+      const comentarios = document.getElementById("comentarios").value;
 
-  const nombre = document.getElementById("nombre").value;
-  const correo = document.getElementById("correo").value;
-  const telefono = document.getElementById("telefono").value;
-  const pais = document.getElementById("pais").value;
-  const tipoResidencia = document.getElementById("tipoResidencia").value;
-  const viajaFamilia = document.getElementById("viajaFamilia").value;
-  const fechaMudanza = document.getElementById("fechaMudanza").value;
-  const visaAnterior = document.getElementById("visaAnterior").value;
-  const comentarios = document.getElementById("comentarios").value;
+      let mensaje = `
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo:</strong> ${correo}</p>
+        <p><strong>Teléfono:</strong> ${telefono}</p>
+        <p><strong>País destino:</strong> ${pais}</p>
+        <p><strong>Tipo de residencia:</strong> ${tipoResidencia}</p>
+        <p><strong>Viaja con familia:</strong> ${viajaFamilia}</p>
+        <p><strong>Fecha de mudanza:</strong> ${fechaMudanza}</p>
+        <p><strong>Ha solicitado visa antes:</strong> ${visaAnterior}</p>
+      `;
 
-  let mensaje = `
-    <p><strong>Nombre:</strong> ${nombre}</p>
-    <p><strong>Correo:</strong> ${correo}</p>
-    <p><strong>Teléfono:</strong> ${telefono}</p>
-    <p><strong>País destino:</strong> ${pais}</p>
-    <p><strong>Tipo de residencia:</strong> ${tipoResidencia}</p>
-    <p><strong>Viaja con familia:</strong> ${viajaFamilia}</p>
-    <p><strong>Fecha de mudanza:</strong> ${fechaMudanza}</p>
-    <p><strong>Ha solicitado visa antes:</strong> ${visaAnterior}</p>
-  `;
+      if (comentarios.trim() !== "") {
+        mensaje += `<p><strong>Comentarios:</strong> ${comentarios}</p>`;
+      }
 
-  if (comentarios.trim() !== "") {
-    mensaje += `<p><strong>Comentarios:</strong> ${comentarios}</p>`;
-  }
-
-  mensajeCotizacion.innerHTML = mensaje;
-
-  formulario.reset();
-});
-</script>
+      mensajeCotizacion.innerHTML = mensaje;
+      formulario.reset();
+    });
+  </script>
 
 </body>
 </html>
