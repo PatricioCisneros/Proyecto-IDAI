@@ -1,248 +1,363 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Visas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Visas</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
-      color: white;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
+    color: white;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
 
-    header {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.18);
-      padding: 55px 25px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
+  header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 55px 25px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
 
-    header h1 {
-      font-size: 48px;
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
+  header h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
 
-    header p {
-      font-size: 20px;
-      margin-top: 12px;
-      opacity: 0.95;
-    }
+  header p {
+    font-size: 20px;
+    margin-top: 12px;
+    opacity: 0.95;
+  }
 
-    
-    .catalogo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 2.4rem;
-      padding: 4rem 2rem;
-      max-width: 1250px;
-      margin: 0 auto 70px;
-    }
+  .catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2.4rem;
+    padding: 4rem 2rem;
+    max-width: 1250px;
+    margin: 0 auto 70px;
+  }
 
-  
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      transition: all 0.35s ease;
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.25);
-    }
+  .card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: all 0.35s ease;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.25);
+  }
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.45);
-    }
+  .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.45);
+  }
 
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
 
-    .card-content {
-      padding: 22px;
-      text-align: center;
-    }
+  .card-content {
+    padding: 22px;
+    text-align: center;
+  }
 
-    .card-content h3 {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 14px;
-      letter-spacing: 1px;
-    }
+  .card-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
 
-    .card-content p {
-      font-size: 17px;
-      margin-bottom: 25px;
-      opacity: 0.95;
-      text-align: justify;
-    }
+  .card-content p {
+    font-size: 17px;
+    margin-bottom: 10px;
+    opacity: 0.95;
+    text-align: justify;
+  }
 
-    
-    .btn {
-      display: inline-block;
-      background-color: #ffffff;
-      color: #6a1b9a;
-      padding: 12px 22px;
-      border-radius: 12px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.35);
-      font-size: 16px;
-    }
+  .visa-quantity {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
 
-    .btn:hover {
-      background-color: #e1bee7;
-      transform: scale(1.08);
-    }
+  .visa-quantity input[type=number] {
+    width: 60px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+  }
 
-    .btn-cotizar {
-      display: inline-block;
-      margin-top: 15px;
-      background: linear-gradient(135deg, #ff80ff, #b43cff);
-      color: white;
-      padding: 12px 22px;
-      border-radius: 12px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-      font-size: 16px;
-      letter-spacing: 0.5px;
-    }
+  .btn, .btn-cotizar {
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+  }
 
-    .btn-cotizar:hover {
-      transform: scale(1.09);
-      background: linear-gradient(135deg, #ffb3ff, #d27aff);
-    }
+  .btn {
+    background-color: #ffffff;
+    color: #6a1b9a;
+    padding: 12px 22px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.35);
+  }
 
-    .info-extra {
-  max-width: 1000px;
-  margin: 20px auto 60px;
-  padding: 20px 30px;
-  background: rgba(255,255,255,0.18);
-  border-radius: 15px;
-  text-align: center;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 1.7;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-  backdrop-filter: blur(6px);
-}
+  .btn:hover {
+    background-color: #e1bee7;
+    transform: scale(1.08);
+  }
 
-    
-    .volver {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 65px;
-    }
+  .btn-cotizar {
+    background: linear-gradient(135deg, #ff80ff, #b43cff);
+    color: white;
+    padding: 12px 22px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+  }
 
-    .volver a {
-      background-color: #ffffff;
-      color: #1565c0;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
-      transition: all 0.3s ease;
-      font-size: 18px;
-    }
+  .btn-cotizar:hover {
+    transform: scale(1.09);
+    background: linear-gradient(135deg, #ffb3ff, #d27aff);
+  }
 
-    .volver a:hover {
-      background-color: #bbdefb;
-      transform: scale(1.08);
-    }
+  .cart-section {
+    max-width: 900px;
+    margin: 30px auto 50px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.15));
+    border-radius: 20px;
+    padding: 25px 30px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+  }
 
-    footer {
-      text-align: center;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.12);
-      color: #e0f7fa;
-      font-size: 15px;
-      border-top: 1px solid rgba(255,255,255,0.25);
-      letter-spacing: 0.6px;
-      backdrop-filter: blur(6px);
-    }
-  </style>
+  .cart-section h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 17px;
+  }
+
+  .info-extra {
+    max-width: 1000px;
+    margin: 20px auto 60px;
+    padding: 20px 30px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.7;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+  }
+
+  .volver {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 65px;
+  }
+
+  .volver a {
+    background-color: #ffffff;
+    color: #1565c0;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+    font-size: 18px;
+  }
+
+  .volver a:hover {
+    background-color: #bbdefb;
+    transform: scale(1.08);
+  }
+
+  footer {
+    text-align: center;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #e0f7fa;
+    font-size: 15px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    letter-spacing: 0.6px;
+    backdrop-filter: blur(6px);
+  }
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Catálogo de Trámites de Visas</h1>
-    <p>Selecciona el tipo de visa que necesitas y permite que nuestro equipo te asesore de manera profesional</p>
-  </header>
+<header>
+  <h1>Catálogo de Trámites de Visas</h1>
+  <p>Selecciona el tipo de visa que necesitas y permite que nuestro equipo te asesore de manera profesional</p>
+</header>
 
-  <section class="catalogo">
+<section class="catalogo">
 
-    <div class="card">
-      <img src="imgs/ttv 5.jpg" alt="Visa de Turista">
-      <div class="card-content">
-        <h3>Visa de Turista</h3>
-        <p>Ideal para quienes desean viajar con fines recreativos o visitar familiares. Nosotros te apoyamos con todos los requisitos y llenado de formularios.</p>
-        <a href="tipos de visas/turista.html" class="btn">Más información</a>
-        <a href="cotizaciones/cotizacionturista.html" class="btn-cotizar">Cotizar Visa</a>
+  <div class="card">
+    <img src="imgs/ttv 5.jpg" alt="Visa de Turista">
+    <div class="card-content">
+      <h3>Visa de Turista</h3>
+      <p>Ideal para quienes desean viajar con fines recreativos o visitar familiares.</p>
+      <div class="visa-quantity">
+        <label>Cantidad:</label>
+        <input type="number" class="visa-count" data-name="Visa de Turista" min="0" value="0">
       </div>
+      <a href="tipos de visas/turista.html" class="btn">Más información</a>
+      <a href="cotizaciones/cotizacionturista.html" class="btn-cotizar">Cotizar Visa</a>
     </div>
+  </div>
 
-    <div class="card">
-      <img src="imgs/ttv 6.jpg" alt="Visa de Estudiante">
-      <div class="card-content">
-        <h3>Visa de Estudiante</h3>
-        <p>Si deseas estudiar en el extranjero, te guiamos paso a paso para que obtengas tu visa estudiantil sin complicaciones.</p>
-        <a href="tipos de visas/estudiante.html" class="btn">Más información</a>
-        <a href="cotizaciones/cotizacionestudiante.html" class="btn-cotizar">Cotizar Visa</a>
+  <div class="card">
+    <img src="imgs/ttv 6.jpg" alt="Visa de Estudiante">
+    <div class="card-content">
+      <h3>Visa de Estudiante</h3>
+      <p>Si deseas estudiar en el extranjero, te guiamos paso a paso.</p>
+      <div class="visa-quantity">
+        <label>Cantidad:</label>
+        <input type="number" class="visa-count" data-name="Visa de Estudiante" min="0" value="0">
       </div>
+      <a href="tipos de visas/estudiante.html" class="btn">Más información</a>
+      <a href="cotizaciones/cotizacionestudiante.html" class="btn-cotizar">Cotizar Visa</a>
     </div>
+  </div>
 
-    <div class="card">
-      <img src="imgs/ttv 7.jpg" alt="Visa de Trabajo">
-      <div class="card-content">
-        <h3>Visa de Trabajo</h3>
-        <p>¿Cuentas con una oferta laboral en otro país? Gestionamos tu visa de trabajo y te asesoramos de inicio a fin.</p>
-        <a href="tipos de visas/trabajo.html" class="btn">Más información</a>
-        <a href="cotizaciones/cotizaciontrabajo.html" class="btn-cotizar">Cotizar Visa</a>
+  <div class="card">
+    <img src="imgs/ttv 7.jpg" alt="Visa de Trabajo">
+    <div class="card-content">
+      <h3>Visa de Trabajo</h3>
+      <p>¿Cuentas con una oferta laboral en otro país? Gestionamos tu visa de trabajo.</p>
+      <div class="visa-quantity">
+        <label>Cantidad:</label>
+        <input type="number" class="visa-count" data-name="Visa de Trabajo" min="0" value="0">
       </div>
+      <a href="tipos de visas/trabajo.html" class="btn">Más información</a>
+      <a href="cotizaciones/cotizaciontrabajo.html" class="btn-cotizar">Cotizar Visa</a>
     </div>
+  </div>
 
-    <div class="card">
-      <img src="imgs/ttv 1.jpg" alt="Visa de Residencia">
-      <div class="card-content">
-        <h3>Visa de Residencia</h3>
-        <p>Si deseas establecerte de forma permanente en otro país, te acompañamos en todo el proceso para obtener tu residencia legal.</p>
-        <a href="tipos de visas/residencia.html" class="btn">Más información</a>
-        <a href="cotizaciones/cotizacionesresidencia.html" class="btn-cotizar">Cotizar Visa</a>
+  <div class="card">
+    <img src="imgs/ttv 1.jpg" alt="Visa de Residencia">
+    <div class="card-content">
+      <h3>Visa de Residencia</h3>
+      <p>Si deseas establecerte de forma permanente en otro país.</p>
+      <div class="visa-quantity">
+        <label>Cantidad:</label>
+        <input type="number" class="visa-count" data-name="Visa de Residencia" min="0" value="0">
       </div>
+      <a href="tipos de visas/residencia.html" class="btn">Más información</a>
+      <a href="cotizaciones/cotizacionesresidencia.html" class="btn-cotizar">Cotizar Visa</a>
     </div>
+  </div>
 
-  </section>
+</section>
 
-  <div class="info-extra">
+<div class="cart-section">
+  <h3>Carrito de visas seleccionadas</h3>
+  <div id="cart-items"></div>
+  <button class="btn-cotizar" id="cotizarBtn">Cotizar todas las visas seleccionadas</button>
+</div>
+
+<div class="info-extra">
   <p>
     En TTV te acompañamos en cada etapa de tu trámite, ofreciéndote orientación clara y un proceso seguro para que obtengas tu visa sin complicaciones.
   </p>
 </div>
 
-  <div class="volver">
-    <a href="index.html">Volver a la página principal de TTV</a>
-  </div>
+<div class="volver">
+  <a href="index.html" style="padding: 12px 24px; font-size: 16px;">Volver a la página principal de TTV</a>
+  <a href="sobre nosotros y preguntas frecuentes/sobrenosotros.html" style="padding: 12px 24px; font-size: 16px; margin-left: 15px;">Sobre Nosotros</a>
+  <a href="sobre nosotros y preguntas frecuentes/preguntasfrecuentes.html" style="padding: 12px 24px; font-size: 16px; margin-left: 15px;">Preguntas Frecuentes</a>
+</div>
 
-  <footer>
-    © 2025 Tramita tu Visa | Todos los derechos reservados
-  </footer>
+
+<footer>
+  © 2025 Tramita tu Visa | Todos los derechos reservados
+</footer>
+
+<script>
+  const selectElements = document.querySelectorAll('.visa-count');
+  const cartItems = document.getElementById('cart-items');
+  const cotizarBtn = document.getElementById('cotizarBtn');
+
+  function updateCart() {
+    cartItems.innerHTML = '';
+    let totalVisas = 0;
+    selectElements.forEach(input => {
+      const count = parseInt(input.value) || 0;
+      if (count > 0) {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+        itemDiv.textContent = count + " × " + input.dataset.name;
+        cartItems.appendChild(itemDiv);
+        totalVisas += count;
+      }
+    });
+    if(totalVisas === 0) {
+      cartItems.innerHTML = '<p>No has seleccionado visas aún.</p>';
+    }
+  }
+
+  selectElements.forEach(input => {
+    input.addEventListener('input', updateCart);
+  });
+
+  cotizarBtn.addEventListener('click', () => {
+    const selectedVisas = [];
+    selectElements.forEach(input => {
+      const count = parseInt(input.value) || 0;
+      if (count > 0) {
+        selectedVisas.push(`${count} × ${input.dataset.name}`);
+      }
+    });
+
+    if(selectedVisas.length === 0) {
+      alert('No has seleccionado ninguna visa para cotizar.');
+    } else {
+      alert(
+        `🎉 Muchas gracias por tu selección 🎉\n\nRecibirás un mensaje pronto para agendar tu cita.\n\nVisas seleccionadas:\n` + selectedVisas.join('\n')
+      );
+    }
+  });
+
+  updateCart();
+</script>
 
 </body>
 </html>

@@ -56,7 +56,6 @@
       margin-bottom: 25px;
     }
 
-    
     form {
       display: flex;
       flex-direction: column;
@@ -126,7 +125,6 @@
       background: #bbdefb;
     }
 
-    
     #alerta-exito {
       position: fixed;
       top: 20px;
@@ -149,16 +147,26 @@
     #alerta-exito.visible {
       opacity: 1;
     }
+
+    #mensaje-cotizacion {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      background: rgba(255,255,255,0.15);
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 
 <body>
 
-  
   <div id="alerta-exito">
-  <span style="font-size: 20px; color: #2e7d32;">✔</span>
-  Cotización enviada correctamente
-</div>
+    <span style="font-size: 20px; color: #2e7d32;">✔</span>
+    Cotización enviada correctamente
+  </div>
 
   <header>
     <h1>Cotización - Visa de Turista</h1>
@@ -214,7 +222,7 @@
       <button class="btn-enviar" type="submit">Enviar Cotización</button>
     </form>
 
-    <div id="resultado"></div>
+    <div id="mensaje-cotizacion"></div>
 
     <div class="volver">
       <a href="../index2.html">Volver al Catálogo</a>
@@ -222,51 +230,45 @@
   </div>
 
   <script>
-const formulario = document.querySelector("form");
-const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
+    const formulario = document.querySelector("form");
+    const mensajeCotizacion = document.getElementById("mensaje-cotizacion");
 
-function mostrarAlerta() {
-  const alerta = document.getElementById("alerta-exito");
-  alerta.classList.add("visible");
-  setTimeout(() => alerta.classList.remove("visible"), 2500);
-}
+    function mostrarAlerta() {
+      const alerta = document.getElementById("alerta-exito");
+      alerta.classList.add("visible");
+      setTimeout(() => alerta.classList.remove("visible"), 2500);
+    }
 
-formulario.addEventListener("submit", function(e) {
-  e.preventDefault();
+    formulario.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-  mostrarAlerta();
+      mostrarAlerta();
 
-  const nombre = document.getElementById("nombre").value;
-  const correo = document.getElementById("correo").value;
-  const telefono = document.getElementById("telefono").value;
-  const pais = document.getElementById("pais").value;
-  const empresa = document.getElementById("empresa").value;
-  const oferta = document.getElementById("oferta").value;
-  const fechaInicio = document.getElementById("fechaInicio").value;
-  const tipoTrabajo = document.getElementById("tipoTrabajo").value;
-  const comentarios = document.getElementById("comentarios").value;
+      const nombre = document.getElementById("nombre").value;
+      const correo = document.getElementById("correo").value;
+      const telefono = document.getElementById("telefono").value;
+      const pais = document.getElementById("pais").value;
+      const fechaViaje = document.getElementById("fechaViaje").value;
+      const visaAnterior = document.getElementById("visaAnterior").value;
+      const comentarios = document.getElementById("comentarios").value;
 
-  let mensaje = `
-    <p><strong>Nombre:</strong> ${nombre}</p>
-    <p><strong>Correo:</strong> ${correo}</p>
-    <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
-    <p><strong>País donde trabajará:</strong> ${pais}</p>
-    <p><strong>Empresa contratante:</strong> ${empresa}</p>
-    <p><strong>Oferta laboral:</strong> ${oferta}</p>
-    <p><strong>Fecha de inicio:</strong> ${fechaInicio}</p>
-    <p><strong>Tipo de trabajo:</strong> ${tipoTrabajo}</p>
-  `;
+      let mensaje = `
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Correo:</strong> ${correo}</p>
+        <p><strong>Teléfono / WhatsApp:</strong> ${telefono}</p>
+        <p><strong>País de viaje:</strong> ${pais}</p>
+        <p><strong>Fecha aproximada de viaje:</strong> ${fechaViaje}</p>
+        <p><strong>Ha solicitado visa antes:</strong> ${visaAnterior}</p>
+      `;
 
-  if (comentarios.trim() !== "") {
-    mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
-  }
+      if (comentarios.trim() !== "") {
+        mensaje += `<p><strong>Comentarios adicionales:</strong> ${comentarios}</p>`;
+      }
 
-  mensajeCotizacion.innerHTML = mensaje;
-
-  formulario.reset();
-});
-</script>
-
+      mensajeCotizacion.innerHTML = mensaje;
+      formulario.reset();
+    });
+  </script>
 
 </body>
 </html>

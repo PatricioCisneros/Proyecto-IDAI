@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preguntas Frecuentes - TTV</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #5ab0e5, #6a1b9a);
+    color: white;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 55px 25px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  header h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
+
+  header p {
+    font-size: 20px;
+    margin-top: 12px;
+    opacity: 0.95;
+  }
+
+  .faq-section {
+    max-width: 900px;
+    margin: 40px auto 50px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 30px 35px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .faq-item {
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .faq-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .faq-item p {
+    font-size: 16px;
+    margin: 0;
+    display: none;
+    line-height: 1.6;
+  }
+
+  .faq-item.active p {
+    display: block;
+  }
+
+  .volver {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 65px;
+    gap: 15px;
+  }
+
+  .volver a {
+    background-color: #ffffff;
+    color: #1565c0;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+
+  .volver a:hover {
+    background-color: #bbdefb;
+    transform: scale(1.08);
+  }
+
+  footer {
+    text-align: center;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #e0f7fa;
+    font-size: 15px;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    letter-spacing: 0.6px;
+    backdrop-filter: blur(6px);
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Preguntas Frecuentes</h1>
+  <p>Resolvemos tus dudas sobre la gestión de visas y nuestros servicios</p>
+</header>
+
+<section class="faq-section">
+  <h2>Preguntas más comunes</h2>
+
+  <div class="faq-item">
+    <h3>¿Cuánto tiempo tarda el trámite de una visa?</h3>
+    <p>El tiempo varía según el tipo de visa y el país. Por lo general, los trámites de visas de turista pueden tardar entre 1 y 3 semanas, mientras que las visas de estudiante o trabajo pueden tardar más.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>¿Qué documentos necesito presentar?</h3>
+    <p>Depende del tipo de visa, pero generalmente se requiere pasaporte vigente, formularios completos, fotografías recientes, comprobantes financieros, cartas de aceptación o de empleo según el caso.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>¿Puedo solicitar varias visas al mismo tiempo?</h3>
+    <p>Sí, puedes gestionar múltiples visas, pero recomendamos organizar cada solicitud por separado para evitar confusiones y garantizar que todos los documentos estén completos.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>¿Tienen asesoría personalizada?</h3>
+    <p>¡Por supuesto! Nuestro equipo te acompaña en cada paso del proceso para asegurar que tu solicitud cumpla con todos los requisitos y aumente las probabilidades de aprobación.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>¿Cómo puedo programar una cita con TTV?</h3>
+    <p>Puedes contactarnos directamente a través del formulario de cotización o llamarnos para agendar una cita según tu disponibilidad.</p>
+  </div>
+</section>
+
+<div class="volver">
+  <a href="../index.html">Volver a la página principal de TTV</a>
+  <a href="../index2.html">Volver a la página de cotizaciones</a>
+  <a href="../sobre nosotros y preguntas frecuentes/sobrenosotros.html">Sobre Nosotros</a>
+</div>
+
+<footer>
+  © 2025 Tramita tu Visa | Todos los derechos reservados
+</footer>
+
+<script>
+
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    item.querySelector('h3').addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+</body>
+</html>
